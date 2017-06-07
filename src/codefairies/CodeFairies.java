@@ -20,5 +20,8 @@ public class CodeFairies {
 //        System.out.println("No you aren't"); 
         
     }
+    public void Vincenzo(){
+        System.out.println("HI");
+    }
     
 }
