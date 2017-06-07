@@ -19,5 +19,7 @@ public class CodeFairies {
         System.out.println("I am better than all of you.");
         System.out.println("No you aren't");
     }
-    
+    public static void james (){
+        //i can mess around in here
+    }
 }
