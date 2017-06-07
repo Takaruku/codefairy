@@ -17,7 +17,8 @@ public class CodeFairies {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("I am better than all of you.");
-        System.out.println("No you aren't");
+//        System.out.println("No you aren't"); 
+        
     }
     
 }
