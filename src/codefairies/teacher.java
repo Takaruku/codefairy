@@ -12,7 +12,9 @@ package codefairies;
 public class teacher {
     private int location;
     private int health;
-
+    private boolean alive;
+    //have any code moving it stop when it dies
+    //also have it despawn (only draw on screeen if this variable is true)
     /**
      * @return the location
      */
@@ -39,6 +41,20 @@ public class teacher {
      */
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    /**
+     * @return the alive
+     */
+    public boolean isAlive() {
+        return alive;
+    }
+
+    /**
+     * @param alive the alive to set
+     */
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
     
 }
