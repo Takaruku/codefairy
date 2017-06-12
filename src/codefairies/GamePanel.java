@@ -17,11 +17,11 @@ public class GamePanel extends javax.swing.JPanel {
  JPanel myParent;
  
  
-    Image teacher = Toolkit.getDefaultToolkit().getImage("game-background-p7-4-x.jpg");
-    Image student = Toolkit.getDefaultToolkit().getImage("Monster-free-to-use-clip-art.png");
-    Image fairies = Toolkit.getDefaultToolkit().getImage("165-Ninja-Avatar-Character-With-Ninja-Stars-And-A-Sword-Free-Vector-Clipart-Illustration.png");
-    Image m = Toolkit.getDefaultToolkit().getImage("150-Free-Vector-Clipart-Illustration-Of-Green-Alien-Avatar-Character.png");
-    Image weapon = Toolkit.getDefaultToolkit().getImage("ninja-shirken-star-clip-art-at-clker-com-vector-clip-art-online-teIGX6-clipart.png");
+    Image teacher = Toolkit.getDefaultToolkit().getImage("evilteacher.png");
+    Image student = Toolkit.getDefaultToolkit().getImage("student.png");
+    Image fairies = Toolkit.getDefaultToolkit().getImage("fairy.png");
+    Image school = Toolkit.getDefaultToolkit().getImage("school.png");
+ 
     /**
      * Creates new form GamePanel
      */

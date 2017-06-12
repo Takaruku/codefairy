@@ -9,29 +9,16 @@ package codefairies;
  *
  * @author James
  */
-public class cookie {
+public class cookie extends variables{
 
     //create an array of them when starting the game
     //scatter them to random positions    
-    private int location;
     private boolean inBag;
     private boolean onGround;
     //set this variable to false when picked up so it can't be picked up again
     //if the carrier dies it, the location changes to where the carrier died, and variable becomes true again
 
-    /**
-     * @return the location
-     */
-    public int getLocation() {
-        return location;
-    }
 
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(int location) {
-        this.location = location;
-    }
 
     /**
      * @return the inBag
