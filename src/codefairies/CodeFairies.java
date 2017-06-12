@@ -25,6 +25,7 @@ public class CodeFairies {
     }
     public static void james (){
         //i can mess around in here/
+        //get friends
         //blarg
     }
 }
