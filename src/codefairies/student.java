@@ -13,7 +13,7 @@ package codefairies;
  */
 public class student extends variables{
     private cookie [] bag;
-
+    
 
     /**
      * @return the bag

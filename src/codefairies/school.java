@@ -12,7 +12,7 @@ package codefairies;
 public class school extends variables {
 
     private boolean intact;
-
+   
     /**
      * @return the intact
      */
