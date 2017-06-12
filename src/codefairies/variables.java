@@ -1,15 +1,18 @@
+package codefairies;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package codefairies;
 
 /**
  *
  * @author James
  */
-public class fairy extends variables{
-   
-    
+public class variables {
+int xLocation;
+int yLocation;
+int health;
+
 }

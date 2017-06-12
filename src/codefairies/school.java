@@ -9,54 +9,9 @@ package codefairies;
  *
  * @author James
  */
-public class school {
-    private int location;
-    //this variable should never change
-    private int alliegance; //each time is assigned a certain number
-    private int health;
+public class school extends variables {
+
     private boolean intact;
-
-    /**
-     * @return the location
-     */
-    public int getLocation() {
-        return location;
-    }
-
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(int location) {
-        this.location = location;
-    }
-
-    /**
-     * @return the alliegance
-     */
-    public int getAlliegance() {
-        return alliegance;
-    }
-
-    /**
-     * @param alliegance the alliegance to set
-     */
-    public void setAlliegance(int alliegance) {
-        this.alliegance = alliegance;
-    }
-
-    /**
-     * @return the health
-     */
-    public int getHealth() {
-        return health;
-    }
-
-    /**
-     * @param health the health to set
-     */
-    public void setHealth(int health) {
-        this.health = health;
-    }
 
     /**
      * @return the intact
