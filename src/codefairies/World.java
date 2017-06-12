@@ -5,10 +5,14 @@
  */
 package codefairies;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lenovo
  */
 public class World {
+    ArrayList<school> schoolList = new ArrayList<>();
+    ArrayList<student> studentList = new ArrayList<>();
     
 }
