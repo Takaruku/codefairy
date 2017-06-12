@@ -14,5 +14,5 @@ import java.util.ArrayList;
 public class World {
     ArrayList<school> schoolList = new ArrayList<>();
     ArrayList<student> studentList = new ArrayList<>();
-    
+    //lmao i messed up?
 }
