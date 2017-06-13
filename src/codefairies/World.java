@@ -12,7 +12,35 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 public class World {
-    ArrayList<school> schoolList = new ArrayList<>();
-    ArrayList<student> studentList = new ArrayList<>();
-    //lmao i messed up?
+
+    private ArrayList<school> schoolList = new ArrayList<>();
+    private ArrayList<student> studentList = new ArrayList<>();
+
+    public void add(variables e) {
+        if (e instanceof school) {
+            schoolList.add((school) e);
+        } else if (e instanceof student) {
+            studentList.add((student) e);
+        }
+    }
+
+    public ArrayList<school> getSchoolList(int alliegance) {
+        ArrayList<school> specificSchoolList = new ArrayList<>();
+        for (int i = 0; i < schoolList.size(); i++) {
+            if (schoolList.get(i).getAlliegance() == alliegance) {
+                specificSchoolList.add(schoolList.get(i));
+            }
+        }
+        return specificSchoolList;
+    }
+
+    public ArrayList<student> getStudentList(int alliegance) {
+        ArrayList<student> specificStudentList = new ArrayList<>();
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getAlliegance() == alliegance) {
+                specificStudentList.add(studentList.get(i));
+            }
+        }
+        return specificStudentList;
+    }
 }
