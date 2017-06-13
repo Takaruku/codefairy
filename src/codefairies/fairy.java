@@ -9,7 +9,8 @@ package codefairies;
  *
  * @author James
  */
-public class fairy extends variables{
-   
+public class fairy extends variables {
+
     
+
 }
