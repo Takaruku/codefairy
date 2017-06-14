@@ -87,20 +87,25 @@ public class variables {
         this.alive = alive;
     }
 
-    public void moveForward() {
+    public void moveUp() {
         //add changes to the x and y coordinates
+        
+        setyLocation(yLocation + 1);
     }
 
-    public void moveBackward() {
+    public void moveDown() {
         //add changes to the x and y coordinates
+        setyLocation(yLocation - 1);
     }
 
     public void moveRight() {
         //add changes to the x and y coordinates
+        setxLocation(xLocation + 1);
     }
 
     public void moveLeft() {
         //add changes to the x and y coordinates
+        setxLocation(xLocation - 1);
     }
 
 }
