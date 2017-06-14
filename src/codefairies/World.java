@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public class World {
 
-    private ArrayList<school> schoolList = new ArrayList<>();
-    private ArrayList<student> studentList = new ArrayList<>();
+    private static ArrayList<school> schoolList = new ArrayList<>();
+    private static ArrayList<student> studentList = new ArrayList<>();
 
-    public void addToList(variables e) {
+    public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
         } else if (e instanceof student) {
@@ -24,7 +24,7 @@ public class World {
         }
     }
 
-    public ArrayList<school> getSchoolList(int alliegance) {
+    public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
             if (schoolList.get(i).getAlliegance() == alliegance) {
@@ -34,7 +34,7 @@ public class World {
         return specificSchoolList;
     }
 
-    public ArrayList<student> getStudentList(int alliegance) {
+    public static ArrayList<student> getStudentList(int alliegance) {
         ArrayList<student> specificStudentList = new ArrayList<>();
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getAlliegance() == alliegance) {
@@ -44,40 +44,47 @@ public class World {
         return specificStudentList;
     }
 
-    private int worldXDim = 16;
-    private int worldYDim = 16;
+    private static int worldXDim = 16;
+    private static int worldYDim = 16;
 
-    public variables[][] worldSpace = new variables[worldXDim][worldYDim];
+    public static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public String checkSpace(int allegiance, int x, int y, char dir) {
+    public static String checkSpace(int allegiance, int x, int y, char dir) {
         variables checkedSpace = null;
+        boolean error = false;
         switch (dir) {
             case 'u' | 'U':
                 try {
                     checkedSpace = worldSpace[x][y - 1];
                 } catch (Exception e) {
+                    error = true;
                 }
             case 'd' | 'D':
                 try {
                     checkedSpace = worldSpace[x][y + 1];
                 } catch (Exception e) {
+                    error = true;
                 }
             case 'l' | 'L':
                 try {
                     checkedSpace = worldSpace[x - 1][y];
                 } catch (Exception e) {
+                    error = true;
                 }
             case 'r' | 'R':
                 try {
                     checkedSpace = worldSpace[x + 1][y];
                 } catch (Exception e) {
+                    error = true;
                 }
+        }
+        if (error) {
+            return "error";
         }
         if (checkedSpace != null) {
             return checkedSpace.getAlliegance() + " " + checkedSpace.getClass().getName();
         }
-        return "Can't be checked!";
+        return "nothing";
     }
-    
-    
+
 }
