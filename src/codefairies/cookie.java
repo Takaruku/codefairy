@@ -18,8 +18,7 @@ public class cookie extends variables{
     //set this variable to false when picked up so it can't be picked up again
     //if the carrier dies it, the location changes to where the carrier died, and variable becomes true again
 
-
-
+    
     /**
      * @return the inBag
      */

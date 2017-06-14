@@ -5,17 +5,17 @@ package codefairies;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author James
  */
 public class variables {
-private int xLocation;
-private int yLocation;
-private int health;
-private int alliegance; //each team gets assigned their own number
-private boolean alive;
+
+    private int xLocation;
+    private int yLocation;
+    private int health;
+    private int alliegance; //each team gets assigned their own number
+    private boolean alive;
 
     /**
      * @return the xLocation
@@ -85,6 +85,22 @@ private boolean alive;
      */
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    public void moveForward() {
+        //add changes to the x and y coordinates
+    }
+
+    public void moveBackward() {
+        //add changes to the x and y coordinates
+    }
+
+    public void moveRight() {
+        //add changes to the x and y coordinates
+    }
+
+    public void moveLeft() {
+        //add changes to the x and y coordinates
     }
 
 }
