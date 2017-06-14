@@ -10,7 +10,7 @@ package codefairies;
  * @author 067860072
  */
 public class Exam {
-     // problem solving, understand oop or linked list
+    // problem solving, understand oop or linked list
     
     // Non Ap
     // classes with missing information, fill in with oop info 
@@ -35,6 +35,6 @@ public class Exam {
     
     // 4 sections
     // 1 = multiple choice
-    //    2 = thinking and communication
-    //  3 and 4 = 2 programs to write
+    // 2 = thinking and communication
+    // 3 and 4 = 2 programs to write
 }

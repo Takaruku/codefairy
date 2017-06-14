@@ -11,4 +11,6 @@ package codefairies;
  */
 public class User {
     // Does this work?
+    
+    
 }
