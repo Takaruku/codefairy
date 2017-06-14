@@ -90,7 +90,7 @@ public class variables {
     public void moveUp() {
         //add changes to the x and y coordinates
         
-        setyLocation(yLocation + 1);
+        setyLocation(yLocation + 1); // bad, do not fuck with my code
     }
 
     public void moveDown() {
