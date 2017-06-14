@@ -49,7 +49,7 @@ public class World {
 
     public static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public static String checkSpace(int allegiance, int x, int y, char dir) {
+    public static String checkSpace( int x, int y, char dir) {
         variables checkedSpace = null;
         boolean error = false;
         switch (dir) {

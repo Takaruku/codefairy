@@ -88,24 +88,27 @@ public class variables {
     }
 
     public void moveUp() {
-        //add changes to the x and y coordinates
-        
-        setyLocation(yLocation + 1); // bad, do not fuck with my code
+        if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
+            setyLocation(yLocation + 1);
+        }
     }
 
     public void moveDown() {
-        //add changes to the x and y coordinates
-        setyLocation(yLocation - 1);
+        if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
+            setyLocation(yLocation - 1);
+        }
     }
 
     public void moveRight() {
-        //add changes to the x and y coordinates
-        setxLocation(xLocation + 1);
+        if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
+            setxLocation(xLocation + 1);
+        }
     }
 
     public void moveLeft() {
-        //add changes to the x and y coordinates
-        setxLocation(xLocation - 1);
+        if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
+            setxLocation(xLocation - 1);
+        }
     }
 
 }
