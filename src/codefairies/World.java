@@ -30,7 +30,7 @@ public class World {
             if (schoolList.get(i).getAlliegance() == alliegance) {
                 specificSchoolList.add(schoolList.get(i));
             }
-        }
+        }s
         return specificSchoolList;
     }
 
