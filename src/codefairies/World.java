@@ -47,15 +47,15 @@ public class World {
     private static int worldXDim = 16;
     private static int worldYDim = 16;
     
-    public int getXDim(){
+    public static int getXDim(){
         return worldXDim;
     }
     
-    public int getYDim(){
+    public static int getYDim(){
         return worldYDim;
     }
     
-    public variables[][] getWorldSpace(){
+    public static variables[][] getWorldSpace(){
         return worldSpace;
     }
     

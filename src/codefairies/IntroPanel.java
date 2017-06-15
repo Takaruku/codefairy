@@ -19,23 +19,28 @@ import javax.swing.JPanel;
  */
 public class IntroPanel extends javax.swing.JPanel {
 
-    JPanel parent;
+    JPanel parent = null;
     Image intro = Toolkit.getDefaultToolkit().getImage("space.jpg");
 
     /**
      * Creates new form GameJPanel
      *
-     * @param p
+     * @param jPanel1
      */
-    public IntroPanel(JPanel p) {
+   public IntroPanel(JPanel jPanel1) {
         initComponents();
-        parent = p;
+        parent = jPanel1;
     }
 
-    public IntroPanel() {
-        initComponents();
+   
+   
 
-    }
+    
+
+  //  public IntroPanel() {
+    //    initComponents();
+
+   // }
 
     @Override
     public void paintComponent(Graphics g) {

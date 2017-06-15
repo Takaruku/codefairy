@@ -16,7 +16,7 @@ import java.awt.event.ComponentAdapter;
 public class Main extends javax.swing.JFrame {
 
     CardLayout cl;
-    IntroPanel gp;
+    GamePanel gp;
 
     /**
      * Creates new form Main
@@ -26,14 +26,14 @@ public class Main extends javax.swing.JFrame {
 
         //card layout shows one panel at a time
         cl = new CardLayout();
-        introPanel1.setLayout(cl);
+        jPanel1.setLayout(cl);
 
         //add 3 panels to the CardLayout
-        gp = new IntroPanel(introPanel1);
-        introPanel1.add(gp, "game");
+        gp = new GamePanel(jPanel1);
+        jPanel1.add(gp, "game");
         //   gameJPanel1.add(new EndPanel( gameJPanel1),"end");
-        introPanel1.add(new IntroPanel(introPanel1), "intro");
-        cl.show(introPanel1, "intro");
+        jPanel1.add(new IntroPanel(jPanel1), "intro");
+        cl.show(jPanel1, "intro");
         // capture key events
         gp.addComponentListener(new ComponentAdapter() {
             @Override
@@ -52,19 +52,32 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        introPanel1 = new codefairies.IntroPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 1043, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 1128, Short.MAX_VALUE)
+        );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(introPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(introPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -106,6 +119,6 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private codefairies.IntroPanel introPanel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

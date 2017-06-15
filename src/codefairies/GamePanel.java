@@ -5,29 +5,72 @@
  */
 package codefairies;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
  * @author 070021183
  */
 public class GamePanel extends javax.swing.JPanel {
- JPanel myParent;
- 
- 
+
+    JPanel parent;
+    Timer animTimer;
+    Image space2 = Toolkit.getDefaultToolkit().getImage("space2.jpg");
     Image teacher = Toolkit.getDefaultToolkit().getImage("evilteacher.png");
     Image student = Toolkit.getDefaultToolkit().getImage("student.png");
     Image fairies = Toolkit.getDefaultToolkit().getImage("fairy.png");
     Image school = Toolkit.getDefaultToolkit().getImage("school.png");
- 
+
     /**
      * Creates new form GamePanel
      */
-    public GamePanel(JPanel p) {
+    public GamePanel(JPanel jPanel1) {
         initComponents();
-          myParent = p;
+        this.setFocusable(true);
+        parent = jPanel1;// tells panel that controls this one
+        //create and start a Timer for animation
+        animTimer = new Timer(50, new AnimTimerTick());
+        animTimer.start();
+
+        teacher = teacher.getScaledInstance(60, 60, 10);
+        student = student.getScaledInstance(60, 60, 10);
+        fairies = fairies.getScaledInstance(60, 60, 10);
+        school = school.getScaledInstance(60, 60, 10);
+        World.addToList(new school());
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(space2, 0, 0, this);
+        variables temp[][] = World.getWorldSpace();
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp[i].length; j++) {
+                //loops through array of images and draws
+                if (temp[i][j] instanceof student) {
+                    g.drawImage(student, 10 * i, 10 * j, this);
+                } else if (temp[i][j] instanceof school) {
+                    g.drawImage(school, 10 * i, 10 * j, this);
+                } else if (temp[i][j] instanceof fairy) {
+                    g.drawImage(fairies, 10 * i, 10 * j, this);
+                } else if (temp[i][j] instanceof teacher) {
+                    g.drawImage(teacher, 10 * i, 10 * j, this);
+                }
+            }
+        }
+    }
+
+    private class AnimTimerTick implements ActionListener {
+
+        public void actionPerformed(ActionEvent ae) {
+            
+            repaint();
+        }
     }
 
     /**
