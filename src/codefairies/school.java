@@ -10,9 +10,9 @@ package codefairies;
  * @author James
  */
 public class school extends variables {
-
+    
     private boolean intact;
-   
+   //add methods for obtaining a new school
     /**
      * @return the intact
      */

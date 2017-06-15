@@ -16,6 +16,7 @@ public class variables {
     private int health;
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
+    
 
     /**
      * @return the xLocation
