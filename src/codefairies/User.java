@@ -27,4 +27,15 @@ public class User {
     }
     // spawn schools and other stuff by using add method in world
     
+    public void  spawnSchool ( ){
+        
+    }
+    
+     public void  spawnTeacher ( ){
+        
+    }
+     
+      public void  spawnFairy ( ){
+        
+    }
 }
