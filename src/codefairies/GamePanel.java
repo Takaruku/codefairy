@@ -42,7 +42,7 @@ public class GamePanel extends javax.swing.JPanel {
         student = student.getScaledInstance(60, 60, 10);
         fairies = fairies.getScaledInstance(60, 60, 10);
         school = school.getScaledInstance(60, 60, 10);
-        World.addToList(new school());
+        World.addToList(new school(5,5,0));
     }
 
     public void paintComponent(Graphics g) {
