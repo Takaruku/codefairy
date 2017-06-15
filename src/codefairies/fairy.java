@@ -11,6 +11,10 @@ package codefairies;
  */
 public class fairy extends variables {
 
+    public fairy(int x, int y, int team) {
+        super(x, y, team);
+    }
+
     public void blackMagic() {
         //to do extra damage when fighting an enemy
         

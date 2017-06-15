@@ -16,10 +16,12 @@ public class User {
      String name;
     int idnum;
 
+    // <editor-fold defaultstate="collapsed" desc="ArrayList Variables">
     ArrayList<student> students = new ArrayList();
     ArrayList<teacher> teachers = new ArrayList();
     ArrayList<fairy> fairy = new ArrayList();
     ArrayList<cookie> cookies = new ArrayList();
+    // </editor-fold>
 
     // make array lists for students, teacher, fairy, cookie
     public User() {
@@ -31,8 +33,8 @@ public class User {
         World.addToList(new school( x,  y,  idnum));
     }
     
-     public void  spawnTeacher ( ){
-        
+     public void  spawnTeacher (int x, int y ){
+        World.addToList(new teacher(x,  y,  idnum));
     }
      
       public void  spawnFairy ( ){
