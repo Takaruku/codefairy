@@ -4,28 +4,32 @@
  * and open the template in the editor.
  */
 package codefairies;
+
 import java.util.Random;
+
 /**
  *
  * @author James
  */
-public class cookie extends variables{
- 
+public class cookie extends variables {
+
     private boolean inBag;
-    
-    public void cookieDistribution(int number){//allows user to decide how many cookies to distribute
-        cookie onGround [] = new cookie [number];
+
+    public void cookieDistribution(int number) {//allows user to decide how many cookies to distribute
+        cookie onGround[] = new cookie[number];
         int looping = 0;
         Random rand = new Random();
-        
-        while (looping < number){
-            int  x = rand.nextInt(50) + 1;//change this code to match boundaries of what we make
-            int  y = rand.nextInt(50) + 1;
-            onGround [looping].setxLocation(x);
-            onGround [looping].setyLocation(y);
+
+        while (looping < number) {
+            int x = rand.nextInt(getXDim()) + 1;
+            int y = rand.nextInt(getYDim()) + 1;
+            onGround[looping].setxLocation(x);
+            onGround[looping].setyLocation(y);
+            onGround[looping].setInBag(false);
+            looping++;
         }
     }
-   
+
     /**
      * @return the inBag
      */

@@ -11,7 +11,7 @@ import java.awt.Image;
  *
  * @author James
  */
-public class variables {
+public class variables extends World{
 
     private int xLocation;
     private int yLocation;
