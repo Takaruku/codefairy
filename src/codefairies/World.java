@@ -100,7 +100,15 @@ public class World {
     
     private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public static String checkSpace( int x, int y, char dir) {
+    public void addToSpace (int x, int y, variables v){
+        worldSpace[x][y] = v;
+    }
+    
+    public void deleteFromSpace (int x, int y, variables v){
+        worldSpace[x][y] = null;
+    }
+    
+    public static String checkSpace(int x, int y, char dir) {
         variables checkedSpace = null;
         boolean error = false;
         switch (dir) {
