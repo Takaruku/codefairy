@@ -11,6 +11,8 @@ package codefairies;
  */
 public class fairy extends variables {
 
-    
+    public void blackMagic() {
+        //to do extra damage when fighting an enemy
+    }
 
 }

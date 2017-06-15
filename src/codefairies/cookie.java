@@ -5,20 +5,31 @@
  */
 package codefairies;
 
+import java.util.Random;
+
 /**
  *
  * @author James
  */
-public class cookie extends variables{
+public class cookie extends variables {
 
-    //create an array of them when starting the game
-    //scatter them to random positions    
     private boolean inBag;
-    private boolean onGround;
-    //set this variable to false when picked up so it can't be picked up again
-    //if the carrier dies it, the location changes to where the carrier died, and variable becomes true again
 
-    
+    public void cookieDistribution(int number) {//allows user to decide how many cookies to distribute
+        cookie onGround[] = new cookie[number];
+        int looping = 0;
+        Random rand = new Random();
+
+        while (looping < number) {
+            int x = rand.nextInt(getXDim()) + 1;
+            int y = rand.nextInt(getYDim()) + 1;
+            onGround[looping].setxLocation(x);
+            onGround[looping].setyLocation(y);
+            onGround[looping].setInBag(false);
+            looping++;
+        }
+    }
+
     /**
      * @return the inBag
      */
@@ -33,17 +44,4 @@ public class cookie extends variables{
         this.inBag = inBag;
     }
 
-    /**
-     * @return the onGround
-     */
-    public boolean isOnGround() {
-        return onGround;
-    }
-
-    /**
-     * @param onGround the onGround to set
-     */
-    public void setOnGround(boolean onGround) {
-        this.onGround = onGround;
-    }
 }
