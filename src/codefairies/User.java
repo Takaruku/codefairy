@@ -27,8 +27,8 @@ public class User {
     }
     // spawn schools and other stuff by using add method in world
     
-    public void  spawnSchool ( ){
-        
+    public void  spawnSchool ( int x, int y){
+        World.addToList(new school( x,  y,  idnum));
     }
     
      public void  spawnTeacher ( ){
