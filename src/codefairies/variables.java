@@ -11,14 +11,20 @@ import java.awt.Image;
  *
  * @author James
  */
-public class variables extends World{
+public class variables extends World {
 
     private int xLocation;
     private int yLocation;
     private int health;
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
-      
+
+    public void variables(int x, int y, int team) {
+        setxLocation(xLocation);
+        setyLocation(yLocation);
+        setAlliegance(team);
+    }
+
     /**
      * @return the xLocation
      */

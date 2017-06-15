@@ -14,7 +14,7 @@ import java.util.Random;
 public class cookie extends variables {
 
     private boolean inBag;
-
+    
     public void cookieDistribution(int number) {//allows user to decide how many cookies to distribute
         cookie onGround[] = new cookie[number];
         int looping = 0;
