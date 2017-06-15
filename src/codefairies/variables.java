@@ -11,14 +11,20 @@ import java.awt.Image;
  *
  * @author James
  */
-public class variables extends World{
+public class variables {
 
     private int xLocation;
     private int yLocation;
     private int health;
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
-      
+
+ public  variables(int x, int y, int team) {
+        setxLocation(xLocation);
+        setyLocation(yLocation);
+        setAlliegance(team);
+    }
+
     /**
      * @return the xLocation
      */
@@ -92,24 +98,32 @@ public class variables extends World{
     public void moveUp() {
         if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
             setyLocation(yLocation + 1);
+            World.addToSpace(xLocation, yLocation, this);
+            World.deleteFromSpace(xLocation, yLocation - 1, this);
         }
     }
 
     public void moveDown() {
         if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
             setyLocation(yLocation - 1);
+            World.addToSpace(xLocation, yLocation, this);
+            World.deleteFromSpace(xLocation, yLocation + 1, this);
         }
     }
 
     public void moveRight() {
         if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
             setxLocation(xLocation + 1);
+            World.addToSpace(xLocation, yLocation, this);
+            World.deleteFromSpace(xLocation - 1, yLocation, this);
         }
     }
 
     public void moveLeft() {
         if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
             setxLocation(xLocation - 1);
+            World.addToSpace(xLocation, yLocation, this);
+            World.deleteFromSpace(xLocation + 1, yLocation, this);
         }
     }
 

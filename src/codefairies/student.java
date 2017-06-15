@@ -11,7 +11,19 @@ package codefairies;
  */
 public class student extends variables {
 
+    public student(int x, int y, int team) {
+        super(x, y, team);
+         setHealth(1);
+        int looping = 0;
+        while (looping < 5){
+            //add code to make sure bag is empty
+            looping++;
+        }
+    }
+
+   
 //IGNORE ALL OF THIS CODE FOR NOW--- GETTING MOVEMENT WORKING IS PRIORITY
+
     public void pickUpCookie(student j, cookie a, int x, int y) {//check to make sure location of cookie on ground
         //matches location of player
         boolean sameSpot = false;

@@ -10,9 +10,17 @@ package codefairies;
  * @author James
  */
 public class school extends variables {
-    
+
+    public school(int x, int y, int team) {
+        super(x, y, team);
+         setHealth(10);
+        setIntact(true);
+    }
+
+   
     private boolean intact;
-   //add methods for obtaining a new school
+    //add methods for obtaining a new school
+
     /**
      * @return the intact
      */

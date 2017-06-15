@@ -15,14 +15,18 @@ public class cookie extends variables {
 
     private boolean inBag;
 
+    public cookie(int x, int y, int team) {
+        super(x, y, team);
+    }
+    
     public void cookieDistribution(int number) {//allows user to decide how many cookies to distribute
         cookie onGround[] = new cookie[number];
         int looping = 0;
         Random rand = new Random();
 
         while (looping < number) {
-            int x = rand.nextInt(getXDim()) + 1;
-            int y = rand.nextInt(getYDim()) + 1;
+            int x = rand.nextInt(World.getXDim()) + 1;
+            int y = rand.nextInt(World.getYDim()) + 1;
             onGround[looping].setxLocation(x);
             onGround[looping].setyLocation(y);
             onGround[looping].setInBag(false);
