@@ -15,12 +15,21 @@ public class World {
 
     private static ArrayList<school> schoolList = new ArrayList<>();
     private static ArrayList<student> studentList = new ArrayList<>();
+    private static ArrayList<teacher> teacherList = new ArrayList<>();
+    private static ArrayList<fairy> fairyList = new ArrayList<>();
+    private static ArrayList<cookie> cookieList = new ArrayList<>();
 
     public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
         } else if (e instanceof student) {
             studentList.add((student) e);
+        } else if (e instanceof teacher) {
+            teacherList.add((teacher) e);
+        } else if (e instanceof fairy) {
+            fairyList.add((fairy) e);
+        } else if (e instanceof cookie) {
+            cookieList.add((cookie) e);
         }
     }
 
@@ -42,6 +51,36 @@ public class World {
             }
         }
         return specificStudentList;
+    }
+    
+    public static ArrayList<teacher> getTeacherList(int alliegance) {
+        ArrayList<teacher> specificTeacherList = new ArrayList<>();
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getAlliegance() == alliegance) {
+                specificTeacherList.add(teacherList.get(i));
+            }
+        }
+        return specificTeacherList;
+    }
+    
+    public static ArrayList<fairy> getFairyList(int alliegance) {
+        ArrayList<fairy> specificFairyList = new ArrayList<>();
+        for (int i = 0; i < fairyList.size(); i++) {
+            if (fairyList.get(i).getAlliegance() == alliegance) {
+                specificFairyList.add(fairyList.get(i));
+            }
+        }
+        return specificFairyList;
+    }
+    
+    public static ArrayList<cookie> getCookieList(int alliegance) {
+        ArrayList<cookie> specificCookieList = new ArrayList<>();
+        for (int i = 0; i < cookieList.size(); i++) {
+            if (cookieList.get(i).getAlliegance() == alliegance) {
+                specificCookieList.add(cookieList.get(i));
+            }
+        }
+        return specificCookieList;
     }
 
     private static int worldXDim = 16;
