@@ -19,6 +19,7 @@ public class World {
     private static ArrayList<fairy> fairyList = new ArrayList<>();
     private static ArrayList<cookie> cookieList = new ArrayList<>();
 
+    // <editor-fold defaultstate="collapsed" desc=" Is this hidden? ">
     public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
@@ -32,6 +33,8 @@ public class World {
             cookieList.add((cookie) e);
         }
     }
+
+// </editor-fold>
 
     public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
