@@ -4,21 +4,28 @@
  * and open the template in the editor.
  */
 package codefairies;
-
+import java.util.Random;
 /**
  *
  * @author James
  */
 public class cookie extends variables{
-
-    //create an array of them when starting the game
-    //scatter them to random positions    
+ 
     private boolean inBag;
     
-    //set this variable to false when picked up so it can't be picked up again
-    //if the carrier dies it, the location changes to where the carrier died, and variable becomes true again
-
-    //add methods for distributing used cookies (because they are used to buy schools)
+    public void cookieDistribution(int number){//allows user to decide how many cookies to distribute
+        cookie onGround [] = new cookie [number];
+        int looping = 0;
+        Random rand = new Random();
+        
+        while (looping < number){
+            int  x = rand.nextInt(50) + 1;//change this code to match boundaries of what we make
+            int  y = rand.nextInt(50) + 1;
+            onGround [looping].setxLocation(x);
+            onGround [looping].setyLocation(y);
+        }
+    }
+   
     /**
      * @return the inBag
      */

@@ -46,8 +46,20 @@ public class World {
 
     private static int worldXDim = 16;
     private static int worldYDim = 16;
-
-    public static variables[][] worldSpace = new variables[worldXDim][worldYDim];
+    
+    public int getXDim(){
+        return worldXDim;
+    }
+    
+    public int getYDim(){
+        return worldYDim;
+    }
+    
+    public variables[][] getWorldSpace(){
+        return worldSpace;
+    }
+    
+    private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
     public static String checkSpace( int x, int y, char dir) {
         variables checkedSpace = null;

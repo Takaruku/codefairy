@@ -9,46 +9,30 @@ package codefairies;
  *
  * @author James
  */
-public class student extends variables{
-    private bag sachel [] ;
-    //ensures that all bags start with a default of being empty
+public class student extends variables {
 
-  
-    public void pickUpCookie (student j, cookie  a, int x, int y){//check to make sure location of cookie on ground
+//IGNORE ALL OF THIS CODE FOR NOW--- GETTING MOVEMENT WORKING IS PRIORITY
+    public void pickUpCookie(student j, cookie a, int x, int y) {//check to make sure location of cookie on ground
         //matches location of player
         boolean sameSpot = false;
         boolean success = false;
-        if (j.getxLocation()==x && j.getyLocation()==y){
+        if (j.getxLocation() == x && j.getyLocation() == y) {
             sameSpot = true;
-        }
-        if (a.isInBag()&& sameSpot){
+        }//makes sure that they can actually get it
+        if (a.isInBag() == false && sameSpot) {
             //then if the location matches
             a.setInBag(true);
             int looping = 0;
-            while (success = false && looping < (sachel.length - 1)){
-                
+            while (success = false && looping < 4) {
                 //code for checking whether or not slot in bag is full
                 //then, once it finds a spot in the bag that isnt full
                 //it adds the cookie to the bag
             }
-            if (success = false){
+            if (success = false) {
                 System.out.println("Your bag is full");//other way of outputting it for the final product
             }
-           //put it into the bag
+            //put it into the bag
         }
     }
 
-    /**
-     * @return the sachel
-     */
-    public bag[] getSachel() {
-        return sachel;
-    }
-
-    /**
-     * @param sachel the sachel to set
-     */
-    public void setSachel(bag[] sachel) {
-        this.sachel = sachel;
-    }
 }

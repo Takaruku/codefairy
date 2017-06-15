@@ -10,5 +10,7 @@ package codefairies;
  * @author Lenovo
  */
 public class Knights extends Thingies{
-    
+    //this should not exist 
+    //it is a waste of a method 
+   
 }
