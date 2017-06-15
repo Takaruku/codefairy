@@ -21,8 +21,8 @@ public class cookie extends variables {
         Random rand = new Random();
 
         while (looping < number) {
-            int x = rand.nextInt(getXDim()) + 1;
-            int y = rand.nextInt(getYDim()) + 1;
+            int x = rand.nextInt(World.getXDim()) + 1;
+            int y = rand.nextInt(World.getYDim()) + 1;
             onGround[looping].setxLocation(x);
             onGround[looping].setyLocation(y);
             onGround[looping].setInBag(false);

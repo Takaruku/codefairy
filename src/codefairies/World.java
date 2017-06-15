@@ -19,6 +19,7 @@ public class World {
     private static ArrayList<fairy> fairyList = new ArrayList<>();
     private static ArrayList<cookie> cookieList = new ArrayList<>();
 
+    // <editor-fold defaultstate="collapsed" desc=" Is this hidden? ">
     public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
@@ -32,6 +33,8 @@ public class World {
             cookieList.add((cookie) e);
         }
     }
+
+// </editor-fold>
 
     public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
@@ -86,25 +89,25 @@ public class World {
     private static int worldXDim = 16;
     private static int worldYDim = 16;
     
-    public int getXDim(){
+    public static int getXDim(){
         return worldXDim;
     }
     
-    public int getYDim(){
+    public static int getYDim(){
         return worldYDim;
     }
     
-    public variables[][] getWorldSpace(){
+    public static variables[][] getWorldSpace(){
         return worldSpace;
     }
     
     private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public void addToSpace (int x, int y, variables v){
+    public static void addToSpace (int x, int y, variables v){
         worldSpace[x][y] = v;
     }
     
-    public void deleteFromSpace (int x, int y, variables v){
+    public static void deleteFromSpace (int x, int y, variables v){
         worldSpace[x][y] = null;
     }
     
