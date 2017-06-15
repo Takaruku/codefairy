@@ -5,12 +5,26 @@
  */
 package codefairies;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lenovo
  */
 public class User {
     // Does this work?
-    
+     String name;
+    int idnum;
+
+    ArrayList<student> students = new ArrayList();
+    ArrayList<teacher> teachers = new ArrayList();
+    ArrayList<fairy> fairy = new ArrayList();
+    ArrayList<cookie> cookies = new ArrayList();
+
+    // make array lists for students, teacher, fairy, cookie
+    public User() {
+
+    }
+    // spawn schools and other stuff by using add method in world
     
 }
