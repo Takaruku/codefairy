@@ -42,12 +42,15 @@ public class GamePanel extends javax.swing.JPanel {
         student = student.getScaledInstance(60, 60, 10);
         fairies = fairies.getScaledInstance(60, 60, 10);
         school = school.getScaledInstance(60, 60, 10);
-        World.addToList(new school(5,5,0));
+        //check if school draws
+        World.addToSpace(5, 5, new school(5, 5, 0));
+
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(space2, 0, 0, this);
+
         variables temp[][] = World.getWorldSpace();
         for (int i = 0; i < temp.length; i++) {
             for (int j = 0; j < temp[i].length; j++) {
@@ -68,7 +71,7 @@ public class GamePanel extends javax.swing.JPanel {
     private class AnimTimerTick implements ActionListener {
 
         public void actionPerformed(ActionEvent ae) {
-            
+
             repaint();
         }
     }
