@@ -86,25 +86,25 @@ public class World {
     private static int worldXDim = 16;
     private static int worldYDim = 16;
     
-    public int getXDim(){
+    public static int getXDim(){
         return worldXDim;
     }
     
-    public int getYDim(){
+    public static int getYDim(){
         return worldYDim;
     }
     
-    public variables[][] getWorldSpace(){
+    public static variables[][] getWorldSpace(){
         return worldSpace;
     }
     
     private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public void addToSpace (int x, int y, variables v){
+    public static void addToSpace (int x, int y, variables v){
         worldSpace[x][y] = v;
     }
     
-    public void deleteFromSpace (int x, int y, variables v){
+    public static void deleteFromSpace (int x, int y, variables v){
         worldSpace[x][y] = null;
     }
     
