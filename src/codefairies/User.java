@@ -12,10 +12,11 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 public class User {
-    // Does this work?
+   // <editor-fold defaultstate="collapsed" desc="Does this work?">
      String name;
     int idnum;
-
+  // </editor-fold>
+    
     // <editor-fold defaultstate="collapsed" desc="ArrayList Variables">
     ArrayList<student> students = new ArrayList();
     ArrayList<teacher> teachers = new ArrayList();
@@ -23,12 +24,17 @@ public class User {
     ArrayList<cookie> cookies = new ArrayList();
     // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="RD is GREAT">
     // make array lists for students, teacher, fairy, cookie
     public User() {
 
     }
     // spawn schools and other stuff by using add method in world
-    
+    //blarg
+    //blargblarg
+    //blargblargblarg
+    //blargblargblargblarg
+    //blargblargblargblargblarg
     public void  spawnSchool ( int x, int y){
         World.addToList(new school( x,  y,  idnum));
     }
@@ -37,7 +43,12 @@ public class User {
         World.addToList(new teacher(x,  y));
     }
      
-      public void  spawnFairy ( ){
-        
+      public void  spawnFairy ( int x, int y){
+         World.addToList(new fairy(x,  y,  idnum, "N/A"));
     }
+      
+         public void  spawnCookie ( int x, int y){
+               World.addToList(new cookie(x,  y,  idnum));
+         }
+          // </editor-fold>
 }
