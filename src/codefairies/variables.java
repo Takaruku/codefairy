@@ -96,8 +96,7 @@ public class variables {
     /**
      * kills objects if there health runs out
      */
-    public void death(){
-      
+    public void death(){   
      World.deleteFromSpace(xLocation, yLocation, this); 
      //removes it if it dies FOREVER
     }
