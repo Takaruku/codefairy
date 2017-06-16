@@ -10,16 +10,13 @@ package codefairies;
  * @author James
  */
 public class fairy extends variables {
+
     private String name;
+
     public fairy(int x, int y, int team, String name) {
         super(x, y, team);
         setName(name);//because code fairies are special, and I wanted to make things a wee bit more complicated
         setFighter(true);
-    }
-
-    public void blackMagic() {
-        //to do extra damage when fighting an enemy
-        
     }
 
     /**
@@ -34,6 +31,7 @@ public class fairy extends variables {
      */
     public void setName(String name) {
         this.name = name;
+
     }
 
 }

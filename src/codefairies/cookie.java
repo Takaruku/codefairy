@@ -12,7 +12,7 @@ import java.util.Random;
  * @author James
  */
 public class cookie extends variables {
-
+    
     private boolean inBag;
 
     public cookie(int x, int y, int team) {
