@@ -21,11 +21,13 @@ public class GamePanel extends javax.swing.JPanel {
 
     JPanel parent;
     Timer animTimer;
-    Image space2 = Toolkit.getDefaultToolkit().getImage("space2.jpg");
-    Image teacher = Toolkit.getDefaultToolkit().getImage("evilteacher.png");
-    Image student = Toolkit.getDefaultToolkit().getImage("student.png");
-    Image fairies = Toolkit.getDefaultToolkit().getImage("fairy.png");
-    Image school = Toolkit.getDefaultToolkit().getImage("school.png");
+    Image space2 = Toolkit.getDefaultToolkit().getImage("src\\space2.jpg");
+    Image teacher = Toolkit.getDefaultToolkit().getImage("src\\evilteacher.png");
+    Image student = Toolkit.getDefaultToolkit().getImage("src\\student.png");
+    Image fairies = Toolkit.getDefaultToolkit().getImage("src\\fairy.png");
+    Image school = Toolkit.getDefaultToolkit().getImage("src\\school.png");
+    Image rd = Toolkit.getDefaultToolkit().getImage("src\\rdhead.png");
+    int imageSize = 60;
 
     /**
      * Creates new form GamePanel
@@ -38,30 +40,33 @@ public class GamePanel extends javax.swing.JPanel {
         animTimer = new Timer(50, new AnimTimerTick());
         animTimer.start();
 
-        teacher = teacher.getScaledInstance(60, 60, 10);
-        student = student.getScaledInstance(60, 60, 10);
-        fairies = fairies.getScaledInstance(60, 60, 10);
-        school = school.getScaledInstance(60, 60, 10);
+        teacher = teacher.getScaledInstance(imageSize, imageSize, 10);
+        student = student.getScaledInstance(imageSize, imageSize, 10);
+        fairies = fairies.getScaledInstance(imageSize, imageSize, 10);
+        school = school.getScaledInstance(imageSize, imageSize, 10);
+        rd = rd.getScaledInstance(100, 100, 100);
         //check if school draws
-        World.addToSpace(5, 5, new school(5, 5, 0));
+        World.addToList(new school(5, 5, 0));
+        World.addToList(new school(15,15, 0));
+       
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(space2, 0, 0, this);
-
+        g.drawImage(rd, 5, 10, this);
         variables temp[][] = World.getWorldSpace();
         for (int i = 0; i < temp.length; i++) {
             for (int j = 0; j < temp[i].length; j++) {
                 //loops through array of images and draws
                 if (temp[i][j] instanceof student) {
-                    g.drawImage(student, 10 * i, 10 * j, this);
+                    g.drawImage(student, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof school) {
-                    g.drawImage(school, 10 * i, 10 * j, this);
+                    g.drawImage(school, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof fairy) {
-                    g.drawImage(fairies, 10 * i, 10 * j, this);
+                    g.drawImage(fairies, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof teacher) {
-                    g.drawImage(teacher, 10 * i, 10 * j, this);
+                    g.drawImage(teacher, imageSize * i, imageSize * j, this);
                 }
             }
         }
