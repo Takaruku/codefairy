@@ -44,7 +44,6 @@ public class GamePanel extends javax.swing.JPanel {
         school = school.getScaledInstance(60, 60, 10);
         //check if school draws
         World.addToSpace(5, 5, new school(5, 5, 0));
-
     }
 
     public void paintComponent(Graphics g) {

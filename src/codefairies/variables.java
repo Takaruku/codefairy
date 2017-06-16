@@ -21,8 +21,9 @@ public class variables {
     private boolean fighter;
 
  public  variables(int x, int y, int team) {
-        setxLocation(xLocation);
-        setyLocation(yLocation);
+      
+     setxLocation(x);
+        setyLocation(y);
         setAlliegance(team);
     }
 
