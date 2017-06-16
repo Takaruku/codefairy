@@ -11,8 +11,10 @@ package codefairies;
  */
 public class teacher extends variables{
  
-    public teacher(int x, int y, int team) {
-        super(x, y, team);       
+    public teacher(int x, int y) {
+        //set a default number for teachers to be so there are no other teams with the same number
+        super(x, y, -1);      
+        setFighter(true);
     }
  
     
