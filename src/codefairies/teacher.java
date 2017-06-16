@@ -12,8 +12,7 @@ package codefairies;
 public class teacher extends variables{
  
     public teacher(int x, int y, int team) {
-        super(x, y, team);
-        
+        super(x, y, team);       
     }
  
     

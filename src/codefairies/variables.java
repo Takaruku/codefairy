@@ -65,6 +65,10 @@ public class variables {
      */
     public void setHealth(int health) {
         this.health = health;
+        //run this code continually during battles
+        if (health ==0){
+            setAlive(false);//starts the chain of code that leads to the death of the object
+        }
     }
 
     /**
@@ -87,12 +91,22 @@ public class variables {
     public boolean isAlive() {
         return alive;
     }
-
+    /**
+     * kills objects if there health runs out
+     */
+    public void death(){
+      
+     World.deleteFromSpace(xLocation, yLocation, this); 
+     //removes it if it dies FOREVER
+    }
     /**
      * @param alive the alive to set
      */
     public void setAlive(boolean alive) {
         this.alive = alive;
+        if (alive == false){
+            death();          
+        }//can i put this code in here
     }
 
     public void moveUp() {

@@ -20,10 +20,13 @@ public class student extends variables {
             looping++;
         }
     }
-
+   public void detectEnemy (variables [][]v, int x, int y){
+    
+   //so students can try and run away 
+   }
    
 //IGNORE ALL OF THIS CODE FOR NOW--- GETTING MOVEMENT WORKING IS PRIORITY
-
+//INSTEAD HAVE IT CARRY COOKIES TO A SCHOOL, IN ORDER FOR THE PLAYER TO SAVE UP AND BUY ANOTHER SCHOOL
     public void pickUpCookie(student j, cookie a, int x, int y) {//check to make sure location of cookie on ground
         //matches location of player
         boolean sameSpot = false;
