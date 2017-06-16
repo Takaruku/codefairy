@@ -37,7 +37,11 @@ public class User {
         World.addToList(new teacher(x,  y,  idnum));
     }
      
-      public void  spawnFairy ( ){
-        
+      public void  spawnFairy ( int x, int y){
+         World.addToList(new fairy(x,  y,  idnum, "N/A"));
     }
+      
+         public void  spawnCookie ( int x, int y){
+               World.addToList(new cookie(x,  y,  idnum));
+         }
 }
