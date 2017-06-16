@@ -32,6 +32,8 @@ public class World {
         } else if (e instanceof cookie) {
             cookieList.add((cookie) e);
         }
+        addToSpace(e.getxLocation(), e.getyLocation(), e);
+        System.out.println(e.getxLocation() + " " + e.getyLocation());
     }
 
 // </editor-fold>

@@ -18,10 +18,12 @@ public class variables {
     private int health;
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
+    private boolean fighter;
 
  public  variables(int x, int y, int team) {
-        setxLocation(xLocation);
-        setyLocation(yLocation);
+      
+     setxLocation(x);
+        setyLocation(y);
         setAlliegance(team);
     }
 
@@ -139,6 +141,20 @@ public class variables {
             World.addToSpace(xLocation, yLocation, this);
             World.deleteFromSpace(xLocation + 1, yLocation, this);
         }
+    }
+
+    /**
+     * @return the canFight
+     */
+    public boolean isFighter() {
+        return fighter;
+    }
+
+    /**
+     * @param canFight the canFight to set
+     */
+    public void setFighter(boolean canFight) {
+        this.fighter = canFight;
     }
 
 }

@@ -14,6 +14,7 @@ public class student extends variables {
     public student(int x, int y, int team) {
         super(x, y, team);
          setHealth(1);
+         setFighter(false);
         int looping = 0;
         while (looping < 5){
             //add code to make sure bag is empty

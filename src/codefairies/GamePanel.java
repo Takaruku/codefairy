@@ -27,6 +27,7 @@ public class GamePanel extends javax.swing.JPanel {
     Image fairies = Toolkit.getDefaultToolkit().getImage("src\\fairy.png");
     Image school = Toolkit.getDefaultToolkit().getImage("src\\school.png");
     Image rd = Toolkit.getDefaultToolkit().getImage("src\\rdhead.png");
+    int imageSize = 60;
 
     /**
      * Creates new form GamePanel
@@ -39,10 +40,10 @@ public class GamePanel extends javax.swing.JPanel {
         animTimer = new Timer(50, new AnimTimerTick());
         animTimer.start();
 
-        teacher = teacher.getScaledInstance(60, 60, 10);
-        student = student.getScaledInstance(60, 60, 10);
-        fairies = fairies.getScaledInstance(60, 60, 10);
-        school = school.getScaledInstance(60, 60, 10);
+        teacher = teacher.getScaledInstance(imageSize, imageSize, 10);
+        student = student.getScaledInstance(imageSize, imageSize, 10);
+        fairies = fairies.getScaledInstance(imageSize, imageSize, 10);
+        school = school.getScaledInstance(imageSize, imageSize, 10);
         rd = rd.getScaledInstance(100, 100, 100);
         //check if school draws
         World.addToList(new school(5, 5, 0));
@@ -59,13 +60,13 @@ public class GamePanel extends javax.swing.JPanel {
             for (int j = 0; j < temp[i].length; j++) {
                 //loops through array of images and draws
                 if (temp[i][j] instanceof student) {
-                    g.drawImage(student, 10 * i, 10 * j, this);
+                    g.drawImage(student, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof school) {
-                    g.drawImage(school, 10 * i, 10 * j, this);
+                    g.drawImage(school, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof fairy) {
-                    g.drawImage(fairies, 10 * i, 10 * j, this);
+                    g.drawImage(fairies, imageSize * i, imageSize * j, this);
                 } else if (temp[i][j] instanceof teacher) {
-                    g.drawImage(teacher, 10 * i, 10 * j, this);
+                    g.drawImage(teacher, imageSize * i, imageSize * j, this);
                 }
             }
         }

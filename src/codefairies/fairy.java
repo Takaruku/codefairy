@@ -14,6 +14,7 @@ public class fairy extends variables {
     public fairy(int x, int y, int team, String name) {
         super(x, y, team);
         setName(name);//because code fairies are special, and I wanted to make things a wee bit more complicated
+        setFighter(true);
     }
 
     public void blackMagic() {
