@@ -14,6 +14,7 @@ public class school extends variables {
     public school(int x, int y, int team) {
         super(x, y, team);
         setHealth(10);
+        setFighter(false);
         //setIntact(true);we dont actually need this, once it is gone it is gone
 
     }

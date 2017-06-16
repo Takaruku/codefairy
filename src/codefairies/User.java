@@ -34,7 +34,7 @@ public class User {
     }
     
      public void  spawnTeacher (int x, int y ){
-        World.addToList(new teacher(x,  y,  idnum));
+        World.addToList(new teacher(x,  y));
     }
      
       public void  spawnFairy ( int x, int y){
