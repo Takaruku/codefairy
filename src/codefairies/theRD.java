@@ -5,7 +5,7 @@
  */
 package codefairies;
 
-import java.util.Random;
+
 
 /**
  *
@@ -16,14 +16,19 @@ public class theRD {
 //run this code every 30 turns
 //run destroy it code every once and a while to choose a victim
     
-
+//USE THIS IF IT WONT TAKE TOO MUCH TIME TO IMPLEMENT
     
 
-    public static void destroyIt() {
-    school [] victim = null;//equals null for now so it doesnt cause errors
-    Random rand = new Random();
-    int whatOne = rand.nextInt(victim.length) + 1;
-    victim[whatOne].setHealth(0);
+    public void destroyIt(variables victim, int x, int y) {
+        //generate random x and y location when calling it
+        boolean nothing = false;
+        if (victim == null){
+         nothing = true;
+        }
+        if (nothing == false){
+    victim.setHealth(0);
     System.out.println("YOU FAIL");
+    System.out.println("EXTERMINATE. I SHOT FIRST");
+        }
     }
 }
