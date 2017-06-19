@@ -17,8 +17,8 @@ import javax.swing.JPanel;
  *
  * @author 070021183
  */
-public class EndPanel extends javax.swing.JPanel  {
-
+public class EndPanel extends javax.swing.JPanel {
+    
     JPanel parent;
     Image end = Toolkit.getDefaultToolkit().getImage("src\\space.jpg");
 
@@ -31,7 +31,7 @@ public class EndPanel extends javax.swing.JPanel  {
         initComponents();
         parent = jPanel1;
     }
-
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -39,7 +39,7 @@ public class EndPanel extends javax.swing.JPanel  {
         g.setColor(Color.PINK);
         g.setFont(new Font("TimesRoman", Font.ITALIC, 50));
         g.drawString("GAME OVER! Please play again!", 100, 200);
-
+        
     }
 
     /**
@@ -91,17 +91,16 @@ public class EndPanel extends javax.swing.JPanel  {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-
-    Main.setVisible(false);   
-            Main.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        System.exit(0);
+        
     }//GEN-LAST:event_closeActionPerformed
 
     private void playagainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playagainActionPerformed
- CardLayout cl = (CardLayout) parent.getLayout();
-        cl.show(parent, "end");
-       
-        EndPanel.setVisible(false);
-        IntroPanel.setVisible(true);
+        CardLayout cl = (CardLayout) parent.getLayout();
+        cl.show(parent, "intro");
+        
+
     }//GEN-LAST:event_playagainActionPerformed
 
 
