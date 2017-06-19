@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package codefairies;
-
+//James wrote all of the code in this class
 /**
  *
  * @author James

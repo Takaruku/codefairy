@@ -9,6 +9,7 @@ package codefairies;
  *
  * @author James
  */
+//James wrote all of the below code
 public class combat {
 
     public  void dealDamage(variables a, variables b) {
