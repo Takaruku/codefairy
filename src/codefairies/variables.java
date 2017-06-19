@@ -106,7 +106,7 @@ public class variables {
      * kills objects if there health runs out
      */
     public void death() {
-        World.deleteFromSpace(xLocation, yLocation, this);
+        World.deleteFromSpace(xLocation, yLocation);
         //removes it if it dies FOREVER
     }
 
@@ -135,7 +135,7 @@ public class variables {
             if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
                 setyLocation(yLocation - 1);
                 if (World.addToSpace(xLocation, yLocation, this)) {
-                    World.deleteFromSpace(xLocation, yLocation + 1, this);
+                    World.deleteFromSpace(xLocation, yLocation + 1);
                     didaction = true;
                 }
 
@@ -151,7 +151,7 @@ public class variables {
                 if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
                     setyLocation(yLocation + 1);
                     if (World.addToSpace(xLocation, yLocation, this)) {
-                        World.deleteFromSpace(xLocation, yLocation - 1, this);
+                        World.deleteFromSpace(xLocation, yLocation - 1);
                         didaction = true;
                     }
 
@@ -172,7 +172,7 @@ public class variables {
                 if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
                     setxLocation(xLocation + 1);
                     if (World.addToSpace(xLocation, yLocation, this)) {
-                        World.deleteFromSpace(xLocation - 1, yLocation, this);
+                        World.deleteFromSpace(xLocation - 1, yLocation);
                         didaction = true;
                     }
 
@@ -192,7 +192,7 @@ public class variables {
                     setxLocation(xLocation - 1);
 
                     if (World.addToSpace(xLocation, yLocation, this)) {
-                        World.deleteFromSpace(xLocation + 1, yLocation, this);
+                        World.deleteFromSpace(xLocation + 1, yLocation);
                         didaction = true;
                     }
                 }

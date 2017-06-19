@@ -70,7 +70,7 @@ public class GamePanel extends javax.swing.JPanel {
             int x = rand.nextInt(World.getXDim()) + 1;
             int y = rand.nextInt(World.getYDim()) + 1;
             if (!World.checkSpace(x, y + 1, 'u').equals("nothing")) {
-            World.deleteFromSpace(x, y, vinnieMadeMeMakeThis );
+            World.deleteFromSpace(x, y);
             g.drawImage(rd, x, y, this);//to show rd claiming his victims
             }
             rdTimer = 0;
@@ -123,6 +123,11 @@ public class GamePanel extends javax.swing.JPanel {
         users[count].ai();
         rdTimer++;
         // add exit condition when only one user remains
+     
+        if (){
+        World.setgameend(true);
+    }
+        
     }
 
     private class AnimTimerTick implements ActionListener {
