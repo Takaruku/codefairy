@@ -58,10 +58,19 @@ public class GamePanel extends javax.swing.JPanel {
         World.setup(users); // Vincenzo wrote this line
 
 //        World.addToList(new student(5, 3, 1));
-        World.addToList(new school(5, 6, 1));
+        spawnelements();
+        
 
     }
 
+    public void spawnelements (){
+        World.addToList(new school(5, 6, 1));
+         World.addToList(new school(9, 6, 2));
+          World.addToList(new school(9, 9, 3));
+           World.addToList(new school(5, 9, 4));
+        // 
+    }
+    
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(space2, 0, 0, this);
