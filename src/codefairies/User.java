@@ -12,43 +12,75 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 public class User {
-   // <editor-fold defaultstate="collapsed" desc="Does this work?">
-     String name;
+
+    // <editor-fold defaultstate="collapsed" desc="Does this work?">
+    String name;
     int idnum;
-  // </editor-fold>
-    
+    // </editor-fold>
+
+    public User(int idnum) {
+
+        this.idnum = idnum;
+    }
+
     // <editor-fold defaultstate="collapsed" desc="ArrayList Variables">
     ArrayList<student> students = new ArrayList();
     ArrayList<teacher> teachers = new ArrayList();
-    ArrayList<fairy> fairy = new ArrayList();
+    ArrayList<fairy> fairies = new ArrayList();
     ArrayList<cookie> cookies = new ArrayList();
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="RD is GREAT">
-    // make array lists for students, teacher, fairy, cookie
     public User() {
 
     }
-    // spawn schools and other stuff by using add method in world
-    //blarg
-    //blargblarg
-    //blargblargblarg
-    //blargblargblargblarg
-    //blargblargblargblargblarg
-    public void  spawnSchool ( int x, int y){
-        World.addToList(new school( x,  y,  idnum));
+
+    public void ai() {
+        if (idnum == 1) {
+            ai1();
+        } else if (idnum == 2) {
+            ai2();
+        } else if (idnum == 3) {
+            ai3();
+        } else if (idnum == 4) {
+            ai4();
+        }
     }
-    
-     public void  spawnTeacher (int x, int y ){
-        World.addToList(new teacher(x,  y));
+
+    public void addstudent(student hold) {
+        students.add(hold);
     }
-     
-      public void  spawnFairy ( int x, int y){
-         World.addToList(new fairy(x,  y,  idnum, "N/A"));
+
+    public void addfairy(fairy hold) {
+        fairies.add(hold);
     }
-      
-         public void  spawnCookie ( int x, int y){
-               World.addToList(new cookie(x,  y,  idnum));
-         }
-          // </editor-fold>
+
+    public void addcookie(cookie hold) {
+        cookies.add(hold);
+    }
+
+    public void ai1() {
+//        System.out.println("ai1");
+        for (student student1 : students) {
+            student1.moveUp();
+            System.out.println();
+        }
+        for (fairy blarg : fairies) {
+            blarg.moveUp();
+         
+        }
+    }
+
+    public void ai2() {
+//        System.out.println("ai2");
+
+    }
+
+    public void ai3() {
+//        System.out.println("ai3");
+    }
+
+    public void ai4() {
+//        System.out.println("ai4");
+    }
+
 }

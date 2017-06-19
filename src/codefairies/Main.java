@@ -34,6 +34,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(new EndPanel(jPanel1),"end");
         jPanel1.add(new IntroPanel(jPanel1), "intro");
         cl.show(jPanel1, "intro");
+        System.out.println("hi");
         // capture key events
         gp.addComponentListener(new ComponentAdapter() {
             @Override

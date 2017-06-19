@@ -91,6 +91,7 @@ public class IntroPanel extends javax.swing.JPanel {
     private void StartbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartbuttonActionPerformed
         CardLayout cl = (CardLayout) parent.getLayout();
         cl.show(parent, "game");
+        World.setgamestart(true);
     }//GEN-LAST:event_StartbuttonActionPerformed
 
 
