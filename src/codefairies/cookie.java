@@ -11,6 +11,8 @@ import java.util.Random;
  *
  * @author James
  */
+//none of this code is used in the final project
+//it was scrapped due to numerous complications
 public class cookie extends variables {
     
     private boolean inBag;
