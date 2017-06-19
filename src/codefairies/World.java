@@ -15,7 +15,7 @@ public class World {
 
     private static int numofplayers = 0;// Vincenzo wrote this line
     private static boolean gamestart = false;// Vincenzo wrote this line
-      private static boolean gamend = false; 
+    private static boolean gamend = false;
     public static User[] users; // Vincenzo wrote this line
 
     private static ArrayList<school> schoolList = new ArrayList<>();
@@ -48,7 +48,7 @@ public class World {
         users = userhold;
     }
 
-    public static ArrayList<school> getSchoolList(int alliegance) { 
+    public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
             if (alliegance == -1) { // Vincenzo wrote this line // this line returns all schools if -1 is the imput
@@ -178,7 +178,7 @@ public class World {
         boolean error = false;
         switch (dir) {
             case 'u' | 'U':
-                try { 
+                try {
                     checkedSpace = worldSpace[x][y - 1];
                 } catch (Exception e) {
                     error = true;
@@ -232,7 +232,7 @@ public class World {
         return true;
     }
 
-    public void printSpace() {
+    public void printSpace() { // Vincenzo wrote this method
         for (int i = 0; i < worldSpace.length; i++) {
 
             System.out.print("[");
