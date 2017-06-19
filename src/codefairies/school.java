@@ -10,23 +10,14 @@ package codefairies;
  * @author James
  */
 public class school extends variables {
-
-//    private int count;
-
+    //James made this class
     public school(int x, int y, int team) {
         super(x, y, team);
         setHealth(10);
         setFighter(false);
-//        count = 0;
-        //setIntact(true);we dont actually need this, once it is gone it is gone
-
     }
 
-    //private boolean intact;
-    //add methods for obtaining a new school
-    public void underAttack(Object attacker) {
-        //use this for the castle to take damage
-    }
+//James and vinnie wrote the below code
 
 //    public void schooltimerspawn() {
 //        count++;

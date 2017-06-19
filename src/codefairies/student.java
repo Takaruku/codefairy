@@ -10,7 +10,8 @@ package codefairies;
  * @author James
  */
 public class student extends variables {
-
+    //James made this class
+    //Vinnie and James made this method
     public student(int x, int y, int team) {
         super(x, y, team);
          setHealth(1);
@@ -22,7 +23,7 @@ public class student extends variables {
         }
     }
    
-   
+   //James wrote the following method
 //IGNORE ALL OF THIS CODE FOR NOW--- GETTING MOVEMENT WORKING IS PRIORITY
 //INSTEAD HAVE IT CARRY COOKIES TO A SCHOOL, IN ORDER FOR THE PLAYER TO SAVE UP AND BUY ANOTHER SCHOOL
     public void pickUpCookie(student j, cookie a, int x, int y) {//check to make sure location of cookie on ground

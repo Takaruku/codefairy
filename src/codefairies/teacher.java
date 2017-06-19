@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 package codefairies;
+//James made the class
 
 /**
  *
  * @author James
  */
-public class teacher extends variables{
- 
+public class teacher extends variables {
+    //Vinnie and James wrote this method
     public teacher(int x, int y) {
         //set a default number for teachers to be so there are no other teams with the same number
-        super(x, y, -1);      
+        super(x, y, -1);
         setFighter(true);
     }
- 
-    
+
 }
