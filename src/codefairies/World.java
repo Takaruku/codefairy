@@ -159,7 +159,7 @@ public class World {
 
     }
 
-    public static void deleteFromSpace(int x, int y) {//the variables is here for no reason // Vincenzo helped fix this line
+    public static void deleteFromSpace(int x, int y) { // Vincenzo helped fix this line
         try {
             worldSpace[x][y] = null;
         } catch (Exception e) {
