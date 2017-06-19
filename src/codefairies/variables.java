@@ -189,7 +189,7 @@ public class variables {
         try {
             if (!didaction) {
 
-                if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
+                if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
                     setxLocation(xLocation - 1);
 
                     if (World.addToSpace(xLocation, yLocation, this)) {
