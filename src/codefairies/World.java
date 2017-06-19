@@ -23,7 +23,6 @@ public class World {
     private static ArrayList<fairy> fairyList = new ArrayList<>();
     private static ArrayList<cookie> cookieList = new ArrayList<>();
 
-    // <editor-fold defaultstate="collapsed" desc=" Is this hidden? ">
     public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
@@ -42,15 +41,12 @@ public class World {
             users[1].addcookie((cookie) e);
         }
         addToSpace(e.getxLocation(), e.getyLocation(), e);
-//        System.out.println(e.getxLocation() + " " + e.getyLocation());
-        addToSpace(e.getxLocation(), e.getyLocation(), e);
     }
 
     public static void setup(User[] userhold) {
         users = userhold;
     }
 
-// </editor-fold>
     public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
