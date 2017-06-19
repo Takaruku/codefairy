@@ -15,7 +15,7 @@ public class World {
 
     private static int numofplayers = 0;
     private static boolean gamestart = false;
-      private static boolean gamend = false;
+    private static boolean gamend = false;
     public static User[] users;
 
     private static ArrayList<school> schoolList = new ArrayList<>();
@@ -132,6 +132,7 @@ public class World {
     public static void setgamestart(boolean start) {
         gamestart = start;
     }
+
     public static boolean getgameend() {
         return gamend;
     }
@@ -213,6 +214,24 @@ public class World {
         }
     }
 
+    public boolean checkDomination() {
+        int temp = 0;
+        for (int i = 0; i < worldSpace.length; i++) {
+            for (int j = 0; j < worldSpace[i].length; j++) {
+                try {
+                    int all = worldSpace[i][j].getAlliegance();
+                    if (temp == 0) {
+                        temp = all;
+                    } else if (temp != 0 && all != temp) {
+                        return false;
+                    }
+                } catch (Exception e) {
+                }
+            }
+        }
+        return true;
+    }
+
     public void printSpace() {
         for (int i = 0; i < worldSpace.length; i++) {
 
@@ -222,7 +241,7 @@ public class World {
                 if (worldSpace[i][j] instanceof student) {
                     System.out.print("Stud");
                 } else if (worldSpace[i][j] instanceof school) {
-                    System.out.print("Shco");
+                    System.out.print("Scho");
                 } else if (worldSpace[i][j] instanceof fairy) {
                     System.out.print("Fair");
                 } else if (worldSpace[i][j] instanceof teacher) {
