@@ -59,6 +59,7 @@ public class GamePanel extends javax.swing.JPanel {
 
 //        World.addToList(new student(5, 3, 1));
         World.addToList(new school(5, 6, 1));
+        
 
     }
 
