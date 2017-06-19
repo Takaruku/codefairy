@@ -11,7 +11,9 @@ import java.awt.Image;
  *
  * @author James
  */
-public class variables {
+public class variables { // James wrote this entire class (with a little help from his friends) 
+//    [He gets by with a little help from my friends]
+//    {Going to try with a little help from my friends}
 
     private int count;
     private int xLocation;
@@ -20,15 +22,15 @@ public class variables {
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
     private boolean fighter;
-    private boolean didaction;
+    private boolean didaction; // Vincenzo wrote this line
 
     public variables(int x, int y, int team) {
 
         setxLocation(x);
         setyLocation(y);
         setAlliegance(team);
-        didaction = false;
-        count = 0;
+        didaction = false;  // Vincenzo wrote this line
+        count = 0;// Vincenzo wrote this line
     }
 
     /**
@@ -201,7 +203,7 @@ public class variables {
                 }// Vincenzo wrote this line
 
             }// Vincenzo wrote this line
-        } catch (Exception e) {// Vincenzo wrote this line
+        } catch (Exception e) {// Vincenzo wrote this line (it's fun to put this everywhere)
         }// Vincenzo wrote this line
 
     }
@@ -225,7 +227,7 @@ public class variables {
             count++;
             System.out.println(count);
             if (count == 5) {
-                fairy hold; 
+                fairy hold;
                 if (World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
                     hold = new fairy(getxLocation(), getyLocation() - 1, getAlliegance(), "Spawn");
                     World.addToList(hold);
@@ -236,7 +238,7 @@ public class variables {
         }
     }
 
-    public boolean hasNeighbour() { 
+    public boolean hasNeighbour() {
         boolean hold = false;
         if (!World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
             hold = true;

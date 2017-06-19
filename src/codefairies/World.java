@@ -213,7 +213,7 @@ public class World {
         }
     }
 
-    public void printSpace() {
+    public void printSpace() { // Vincenzo wrote this method
         for (int i = 0; i < worldSpace.length; i++) {
 
             System.out.print("[");

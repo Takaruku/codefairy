@@ -28,12 +28,12 @@ public class GamePanel extends javax.swing.JPanel {
     Image fairies = Toolkit.getDefaultToolkit().getImage("src\\fairy.png");
     Image school = Toolkit.getDefaultToolkit().getImage("src\\school.png");
     Image rd = Toolkit.getDefaultToolkit().getImage("src\\rdhead.png");
-    public User[] users = new User[5];
-    int count = 0;
+    public User[] users = new User[5];  // Vincenzo wrote this line
+    int count = 0;// Vincenzo wrote this line
     int imageSize = 60;
     int rdTimer = 0;
     theRD destroyer = new theRD();
-    variables vinnieMadeMeMakeThis;
+//    variables vinnieMadeMeMakeThis; 
     /**
      * Creates new form GamePanel
      */
@@ -51,11 +51,11 @@ public class GamePanel extends javax.swing.JPanel {
         school = school.getScaledInstance(imageSize, imageSize, 10);
         rd = rd.getScaledInstance(imageSize * 2, imageSize * 2, 10);
         //check if school draws
-        World.setNumPlayers(4);
-        for (int i = 1; i < 5; i++) {
+        World.setNumPlayers(4); // Vincenzo wrote this line
+        for (int i = 1; i < 5; i++) {// Vincenzo wrote this line
             users[i] = new User(i);
         }
-        World.setup(users);
+        World.setup(users); // Vincenzo wrote this line
 
 //        World.addToList(new student(5, 3, 1));
         World.addToList(new school(5, 6, 1));
@@ -95,7 +95,7 @@ public class GamePanel extends javax.swing.JPanel {
         }
     }
 
-    public void turn() {
+    public void turn() { // Vincenzo wrote this method
 
         if (count == World.getNumPlayers()) {
             count = 1;
