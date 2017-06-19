@@ -31,7 +31,7 @@ public class Main extends javax.swing.JFrame {
         //add 3 panels to the CardLayout
         gp = new GamePanel(jPanel1);
         jPanel1.add(gp, "game");
-        //   gameJPanel1.add(new EndPanel( gameJPanel1),"end");
+        jPanel1.add(new EndPanel(jPanel1),"end");
         jPanel1.add(new IntroPanel(jPanel1), "intro");
         cl.show(jPanel1, "intro");
         System.out.println("hi");

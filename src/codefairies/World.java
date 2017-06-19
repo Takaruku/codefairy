@@ -15,6 +15,7 @@ public class World {
 
     private static int numofplayers = 0;
     private static boolean gamestart = false;
+      private static boolean gamend = false;
     public static User[] users;
 
     private static ArrayList<school> schoolList = new ArrayList<>();
@@ -131,6 +132,13 @@ public class World {
     public static void setgamestart(boolean start) {
         gamestart = start;
     }
+    public static boolean getgameend() {
+        return gamend;
+    }
+
+    public static void setgameend(boolean start) {
+        gamend = start;
+    }
 
     public static int getNumPlayers() {
         return numofplayers;
@@ -160,7 +168,7 @@ public class World {
 
     }
 
-    public static void deleteFromSpace(int x, int y, variables v) {//the variables is here for no reason
+    public static void deleteFromSpace(int x, int y) {//the variables is here for no reason
         worldSpace[x][y] = null;
     }
 
