@@ -160,7 +160,7 @@ public class World {
     }
 
     public static void deleteFromSpace(int x, int y) { // Vincenzo helped fix this line
-        try {
+        try { 
             worldSpace[x][y] = null;
         } catch (Exception e) {
 
