@@ -20,7 +20,7 @@ public class variables {
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
     private boolean fighter;
-    boolean didaction;
+   private  boolean didaction;
 
     public variables(int x, int y, int team) {
 
@@ -52,6 +52,11 @@ public class variables {
         return yLocation;
     }
 
+     public boolean didaction() {
+        return didaction;
+    }
+
+    
     /**
      * @param yLocation the yLocation to set
      */
@@ -132,39 +137,29 @@ public class variables {
                 setyLocation(yLocation - 1);
                 if (World.addToSpace(xLocation, yLocation, this)) {
                     World.deleteFromSpace(xLocation, yLocation + 1, this);
+                    didaction = true;
                 }
+
             }
-            didaction = true;
+
         }
     }
 
     public void moveDown() {
         try {
             if (!didaction) {
+//                System.out.println(World.checkSpace(xLocation, yLocation, 'd'));
                 if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
                     setyLocation(yLocation + 1);
                     if (World.addToSpace(xLocation, yLocation, this)) {
-                        World.deleteFromSpace(xLocation, yLocation -1, this);
+                        World.deleteFromSpace(xLocation, yLocation - 1, this);
+                        didaction = true;
                     }
+
+                } else {
+//                    System.out.println("There is something here");
                 }
-                didaction = true;
-            }
-        } catch (Exception e) {
-        }
 
-    }
-
-    public void moveLeft() {
-        try {
-            if (!didaction) {
-
-                if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
-                    setxLocation(xLocation + 1);
-                    if (World.addToSpace(xLocation, yLocation, this)) {
-                        World.deleteFromSpace(xLocation - 1, yLocation, this);
-                    }
-                }
-                didaction = true;
             }
         } catch (Exception e) {
         }
@@ -175,14 +170,34 @@ public class variables {
         try {
             if (!didaction) {
 
-                if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
+                if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
+                    setxLocation(xLocation + 1);
+                    if (World.addToSpace(xLocation, yLocation, this)) {
+                        World.deleteFromSpace(xLocation - 1, yLocation, this);
+                        didaction = true;
+                    }
+
+                }
+
+            }
+        } catch (Exception e) {
+        }
+
+    }
+
+    public void moveLeft() {
+        try {
+            if (!didaction) {
+
+                if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
                     setxLocation(xLocation - 1);
 
                     if (World.addToSpace(xLocation, yLocation, this)) {
                         World.deleteFromSpace(xLocation + 1, yLocation, this);
+                      didaction = true;
                     }
                 }
-                didaction = true;
+              
             }
         } catch (Exception e) {
         }
@@ -207,11 +222,11 @@ public class variables {
         if (this instanceof school) {
             count++;
             System.out.println(count);
-            if (count == 10) {
+            if (count == 5) {
                 fairy hold;
-                if (World.checkSpace(getxLocation(), getyLocation() + 1, 'd').equals("nothing")) {
-                    hold = new fairy(getxLocation(), getyLocation() + 1, getAlliegance(), "Spawn");
-                    World.addToSpace(getxLocation(), getyLocation() + 1, hold);
+                if (World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
+                    hold = new fairy(getxLocation(), getyLocation() - 1, getAlliegance(), "Spawn");
+                    World.addToSpace(getxLocation(), getyLocation() - 1, hold);
                     World.addToList(hold);
                 }
                 count = 0;

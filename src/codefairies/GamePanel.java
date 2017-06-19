@@ -39,14 +39,14 @@ public class GamePanel extends javax.swing.JPanel {
         this.setFocusable(true);
         parent = jPanel1;// tells panel that controls this one
         //create and start a Timer for animation
-        animTimer = new Timer(500, new AnimTimerTick());
+        animTimer = new Timer(50, new AnimTimerTick());
         animTimer.start();
 
         teacher = teacher.getScaledInstance(imageSize, imageSize, 10);
         student = student.getScaledInstance(imageSize, imageSize, 10);
         fairies = fairies.getScaledInstance(imageSize, imageSize, 10);
         school = school.getScaledInstance(imageSize, imageSize, 10);
-        rd = rd.getScaledInstance(imageSize, imageSize, 10);
+        rd = rd.getScaledInstance(imageSize *2, imageSize*2, 10);
         //check if school draws
         World.setNumPlayers(4);
         for (int i = 1; i < 5; i++) {
@@ -55,7 +55,7 @@ public class GamePanel extends javax.swing.JPanel {
         World.setup(users);
         
         
-        World.addToList(new student(5, 5, 1));
+//        World.addToList(new student(5, 3, 1));
         World.addToList(new school(5, 6, 1));
 
     }
@@ -88,7 +88,7 @@ public class GamePanel extends javax.swing.JPanel {
             count = 1;
             for (variables var : World.getStudentList(-1)) {
                 var.refresh();
-                System.out.println("Student found");
+//                System.out.println("Student found");
             }
             for (variables var : World.getTeacherList(-1)) {
                 var.refresh();
@@ -106,7 +106,7 @@ public class GamePanel extends javax.swing.JPanel {
         } else {
             count++;
         }
-        System.out.println(count);
+//        System.out.println(count);
         users[count].ai();
 
         // add exit condition when only one user remains

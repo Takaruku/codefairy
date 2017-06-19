@@ -42,7 +42,8 @@ public class World {
             users[1].addcookie((cookie) e);
         }
         addToSpace(e.getxLocation(), e.getyLocation(), e);
-        System.out.println(e.getxLocation() + " " + e.getyLocation());
+//        System.out.println(e.getxLocation() + " " + e.getyLocation());
+        addToSpace(e.getxLocation(), e.getyLocation(), e);
     }
 
     public static void setup(User[] userhold) {
@@ -201,8 +202,34 @@ public class World {
         }
         if (checkedSpace != null) {
             return checkedSpace.getAlliegance() + " " + checkedSpace.getClass().getName();
+        } else {
+
+//          
+            return "nothing";
         }
-        return "nothing";
+    }
+
+    public void printSpace() {
+        for (int i = 0; i < worldSpace.length; i++) {
+
+            System.out.print("[");
+            for (int j = 0; j < worldSpace[i].length; j++) {
+                //loops through array of images and draws
+                if (worldSpace[i][j] instanceof student) {
+                    System.out.print("Stud");
+                } else if (worldSpace[i][j] instanceof school) {
+                    System.out.print("Shco");
+                } else if (worldSpace[i][j] instanceof fairy) {
+                    System.out.print("Fair");
+                } else if (worldSpace[i][j] instanceof teacher) {
+                    System.out.print("Teac");
+                } else {
+//                    g.drawImage(teacher, imageSize * i, imageSize * j, this);
+                }
+                System.out.print(",");
+            }
+            System.out.println("]");
+        }
     }
 
 }

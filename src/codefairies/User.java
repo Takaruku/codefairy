@@ -59,32 +59,28 @@ public class User {
     }
 
     public void ai1() {
-        System.out.println("ai1");
+//        System.out.println("ai1");
         for (student student1 : students) {
-            student1.moveDown();
+            student1.moveUp();
+            System.out.println();
         }
-         for (fairy fairy1 : fairies) {
-            
-             if (fairy1.getxLocation()>5){
-                 fairy1.moveUp();
-             } else {
-                 fairy1.moveDown();
-             }
-            
+        for (fairy fairy1 : fairies) {
+            fairy1.moveLeft();
+         
         }
     }
 
     public void ai2() {
-        System.out.println("ai2");
+//        System.out.println("ai2");
 
     }
 
     public void ai3() {
-        System.out.println("ai3");
+//        System.out.println("ai3");
     }
 
     public void ai4() {
-        System.out.println("ai4");
+//        System.out.println("ai4");
     }
 
 }
