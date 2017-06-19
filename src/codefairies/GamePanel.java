@@ -124,9 +124,9 @@ public class GamePanel extends javax.swing.JPanel {
         rdTimer++;
         // add exit condition when only one user remains
      
-        if (){
-        World.setgameend(true);
-    }
+//        if (){
+//        World.setgameend(true);
+//    }
         
     }
 

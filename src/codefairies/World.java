@@ -15,7 +15,7 @@ public class World {
 
     private static int numofplayers = 0;// Vincenzo wrote this line
     private static boolean gamestart = false;// Vincenzo wrote this line
-      private static boolean gamend = false; 
+    private static boolean gamend = false;
     public static User[] users; // Vincenzo wrote this line
 
     private static ArrayList<school> schoolList = new ArrayList<>();
@@ -48,15 +48,13 @@ public class World {
         users = userhold;
     }
 
-    public static ArrayList<school> getSchoolList(int alliegance) { 
+    public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
             if (alliegance == -1) { // Vincenzo wrote this line // this line returns all schools if -1 is the imput
                 specificSchoolList.add(schoolList.get(i));// Vincenzo wrote this line
-            } else {
-                if (schoolList.get(i).getAlliegance() == alliegance) {
-                    specificSchoolList.add(schoolList.get(i));
-                }
+            } else if (schoolList.get(i).getAlliegance() == alliegance) {
+                specificSchoolList.add(schoolList.get(i));
             }
         }
         return specificSchoolList;
@@ -67,10 +65,8 @@ public class World {
         for (int i = 0; i < studentList.size(); i++) {
             if (alliegance == -1) { // Vincenzo wrote this line
                 specificStudentList.add(studentList.get(i));// Vincenzo wrote this line
-            } else {
-                if (studentList.get(i).getAlliegance() == alliegance) {
-                    specificStudentList.add(studentList.get(i));
-                }
+            } else if (studentList.get(i).getAlliegance() == alliegance) {
+                specificStudentList.add(studentList.get(i));
             }
         }
         return specificStudentList;
@@ -81,10 +77,8 @@ public class World {
         for (int i = 0; i < teacherList.size(); i++) {
             if (alliegance == -1) {// Vincenzo wrote this line
                 specificTeacherList.add(teacherList.get(i));// Vincenzo wrote this line
-            } else {
-                if (teacherList.get(i).getAlliegance() == alliegance) {
-                    specificTeacherList.add(teacherList.get(i));
-                }
+            } else if (teacherList.get(i).getAlliegance() == alliegance) {
+                specificTeacherList.add(teacherList.get(i));
             }
         }
         return specificTeacherList;
@@ -95,10 +89,8 @@ public class World {
         for (int i = 0; i < fairyList.size(); i++) {
             if (alliegance == -1) {// Vincenzo wrote this line
                 specificFairyList.add(fairyList.get(i));// Vincenzo wrote this line
-            } else {
-                if (fairyList.get(i).getAlliegance() == alliegance) {
-                    specificFairyList.add(fairyList.get(i));
-                }
+            } else if (fairyList.get(i).getAlliegance() == alliegance) {
+                specificFairyList.add(fairyList.get(i));
             }
         }
         return specificFairyList;
@@ -109,10 +101,8 @@ public class World {
         for (int i = 0; i < cookieList.size(); i++) {
             if (alliegance == -1) {// Vincenzo wrote this line
                 specificCookieList.add(cookieList.get(i));// Vincenzo wrote this line
-            } else {
-                if (cookieList.get(i).getAlliegance() == alliegance) {
-                    specificCookieList.add(cookieList.get(i));
-                }
+            } else if (cookieList.get(i).getAlliegance() == alliegance) {
+                specificCookieList.add(cookieList.get(i));
             }
         }
         return specificCookieList;
@@ -132,6 +122,7 @@ public class World {
     public static void setgamestart(boolean start) { // Vincenzo wrote this method
         gamestart = start;
     }
+
     public static boolean getgameend() {
         return gamend;
     }
@@ -169,7 +160,11 @@ public class World {
     }
 
     public static void deleteFromSpace(int x, int y) {//the variables is here for no reason // Vincenzo helped fix this line
-        worldSpace[x][y] = null;
+        try {
+            worldSpace[x][y] = null;
+        } catch (Exception e) {
+
+        }
     }
 
     public static String checkSpace(int x, int y, char dir) {
@@ -177,7 +172,7 @@ public class World {
         boolean error = false;
         switch (dir) {
             case 'u' | 'U':
-                try { 
+                try {
                     checkedSpace = worldSpace[x][y - 1];
                 } catch (Exception e) {
                     error = true;
