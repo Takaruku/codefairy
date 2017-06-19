@@ -120,86 +120,89 @@ public class variables {
         }//can i put this code in here
     }
 
-    public void exhaust() {
+    public void exhaust() { // Vincenzo Method
 
         didaction = true;
     }
 
-    public void refresh() {
+    public void refresh() { // Vincenzo Method
 
         didaction = false;
     }
 
     public void moveUp() {
-        if (didaction == false) {
-            if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
-                setyLocation(yLocation - 1);
-                if (World.addToSpace(xLocation, yLocation, this)) {
-                    World.deleteFromSpace(xLocation, yLocation + 1);
-                    didaction = true;
-                }
+        try {// Vincenzo wrote this line
+            if (didaction == false) { // Vincenzo wrote this line
+                if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) { // Vincenzo wrote this line
+                    setyLocation(yLocation - 1);
+                    if (World.addToSpace(xLocation, yLocation, this)) {
+                        World.deleteFromSpace(xLocation, yLocation + 1);
+                        didaction = true;// Vincenzo wrote this line
+                    }
 
-            }
+                } // Vincenzo wrote this line
+            } // Vincenzo wrote this line
+        } catch (Exception e) {// Vincenzo wrote this line
 
-        }
+        }// Vincenzo wrote this line
     }
 
     public void moveDown() {
-        try {
-            if (didaction == false) {
-//                System.out.println(World.checkSpace(xLocation, yLocation, 'd'));
-                if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
+        try {// Vincenzo wrote this line
+            if (didaction == false) {// Vincenzo wrote this line
+//                System.out.println(World.checkSpace(xLocation, yLocation, 'd'));// Vincenzo wrote this line
+                if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {// Vincenzo wrote this line
                     setyLocation(yLocation + 1);
                     if (World.addToSpace(xLocation, yLocation, this)) {
                         World.deleteFromSpace(xLocation, yLocation - 1);
-                        didaction = true;
-                    }
+                        didaction = true;// Vincenzo wrote this line
+                    }// Vincenzo wrote this line
 
-                } else {
-//                    System.out.println("There is something here");
-                }
+                } else {// Vincenzo wrote this line
+//                    System.out.println("There is something here");// Vincenzo wrote this line
+                }// Vincenzo wrote this line
 
-            }
-        } catch (Exception e) {
-        }
+            }// Vincenzo wrote this line
+        } catch (Exception e) {// Vincenzo wrote this line
+        }// Vincenzo wrote this line
 
     }
 
     public void moveRight() {
-        try {
-            if (didaction == false) {
+        try {// Vincenzo wrote this line
+            if (didaction == false) {// Vincenzo wrote this line
 
-                if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
+                if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {// Vincenzo wrote this line
                     setxLocation(xLocation + 1);
                     if (World.addToSpace(xLocation, yLocation, this)) {
                         World.deleteFromSpace(xLocation - 1, yLocation);
-                        didaction = true;
-                    }
+                        didaction = true;// Vincenzo wrote this line
+                    }// Vincenzo wrote this line
 
-                }
+                }// Vincenzo wrote this line
 
-            }
-        } catch (Exception e) {
-        }
+            }// Vincenzo wrote this line
+        } catch (Exception e) {// Vincenzo wrote this line
+        }// Vincenzo wrote this line
 
     }
 
     public void moveLeft() {
-        try {
-            if (didaction == false) {
+        try {// Vincenzo wrote this line
+            if (didaction == false) {// Vincenzo wrote this line
 
-                if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
+                if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {// Vincenzo wrote this line
                     setxLocation(xLocation - 1);
 
                     if (World.addToSpace(xLocation, yLocation, this)) {
                         World.deleteFromSpace(xLocation + 1, yLocation);
-                        didaction = true;
+                        didaction = true;// Vincenzo wrote this line
                     }
-                }
+                }// Vincenzo wrote this line
 
-            }
-        } catch (Exception e) {
-        }
+            }// Vincenzo wrote this line
+        } catch (Exception e) {// Vincenzo wrote this line
+        }// Vincenzo wrote this line
 
     }
 
@@ -217,12 +220,12 @@ public class variables {
         this.fighter = canFight;
     }
 
-    public void schooltimerspawn() {
+    public void schooltimerspawn() {// Vincenzo wrote this method
         if (this instanceof school) {
             count++;
             System.out.println(count);
             if (count == 5) {
-                fairy hold;
+                fairy hold; 
                 if (World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
                     hold = new fairy(getxLocation(), getyLocation() - 1, getAlliegance(), "Spawn");
                     World.addToList(hold);
@@ -233,7 +236,7 @@ public class variables {
         }
     }
 
-    public boolean hasNeighbour() {
+    public boolean hasNeighbour() { 
         boolean hold = false;
         if (!World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
             hold = true;
@@ -248,7 +251,7 @@ public class variables {
         return hold;
     }
 
-    public char whereNeighbour() {
+    public char whereNeighbour() { // vincenzo wrote this
         char hold = ' ';
         if (!World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
             hold = 'u';
@@ -263,7 +266,7 @@ public class variables {
     }
 
     public void dealDamage(variables a, variables b) {
-        if (fighter) {
+        if (fighter) {// Vincenzo wrote this line
 
             boolean beside = findNeighbour(a, b);
             boolean sameTeam = false;
@@ -283,7 +286,7 @@ public class variables {
                     a.setHealth(a.getHealth() + damage);
                 }
             }
-            a.exhaust();
+            a.exhaust(); // Vincenzo wrote this line
         }
 
     }
