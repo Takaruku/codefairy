@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Lenovo
  */
-public class User {
+public class User { // Vincenzo wrote this method, it's moderately buggy?
 
     // <editor-fold defaultstate="collapsed" desc="Does this work?">
     String name;
