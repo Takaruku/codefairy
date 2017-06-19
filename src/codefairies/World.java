@@ -208,15 +208,23 @@ public class World {
         }
     }
 
+    //Aidan wrote this method
     public boolean checkDomination() {
+        //
         int temp = 0;
+        //Loop through whole world
         for (int i = 0; i < worldSpace.length; i++) {
             for (int j = 0; j < worldSpace[i].length; j++) {
                 try {
                     int all = worldSpace[i][j].getAlliegance();
+                    //If no spaces checked have an allegance yet
                     if (temp == 0) {
+                        //The current space's alliegance is assumed to be the only one
                         temp = all;
+                    
+                    //If the alliegance does not match all previous
                     } else if (temp != 0 && all != temp) {
+                        //Assumption was wrong, no-one has won
                         return false;
                     }
                 } catch (Exception e) {
