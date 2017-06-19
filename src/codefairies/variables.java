@@ -20,7 +20,7 @@ public class variables {
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
     private boolean fighter;
-   private  boolean didaction;
+    private boolean didaction;
 
     public variables(int x, int y, int team) {
 
@@ -52,11 +52,10 @@ public class variables {
         return yLocation;
     }
 
-     public boolean didaction() {
+    public boolean didaction() {
         return didaction;
     }
 
-    
     /**
      * @param yLocation the yLocation to set
      */
@@ -132,7 +131,7 @@ public class variables {
     }
 
     public void moveUp() {
-        if (!didaction) {
+        if (didaction == false) {
             if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
                 setyLocation(yLocation - 1);
                 if (World.addToSpace(xLocation, yLocation, this)) {
@@ -147,7 +146,7 @@ public class variables {
 
     public void moveDown() {
         try {
-            if (!didaction) {
+            if (didaction == false) {
 //                System.out.println(World.checkSpace(xLocation, yLocation, 'd'));
                 if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
                     setyLocation(yLocation + 1);
@@ -168,7 +167,7 @@ public class variables {
 
     public void moveRight() {
         try {
-            if (!didaction) {
+            if (didaction == false) {
 
                 if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
                     setxLocation(xLocation + 1);
@@ -187,17 +186,17 @@ public class variables {
 
     public void moveLeft() {
         try {
-            if (!didaction) {
+            if (didaction == false) {
 
                 if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
                     setxLocation(xLocation - 1);
 
                     if (World.addToSpace(xLocation, yLocation, this)) {
                         World.deleteFromSpace(xLocation + 1, yLocation, this);
-                      didaction = true;
+                        didaction = true;
                     }
                 }
-              
+
             }
         } catch (Exception e) {
         }

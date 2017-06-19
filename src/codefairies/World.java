@@ -164,7 +164,7 @@ public class World {
 
     }
 
-    public static void deleteFromSpace(int x, int y, variables v) {
+    public static void deleteFromSpace(int x, int y, variables v) {//the variables is here for no reason
         worldSpace[x][y] = null;
     }
 

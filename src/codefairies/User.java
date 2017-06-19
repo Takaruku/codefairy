@@ -64,8 +64,8 @@ public class User {
             student1.moveUp();
             System.out.println();
         }
-        for (fairy fairy1 : fairies) {
-            fairy1.moveLeft();
+        for (fairy blarg : fairies) {
+            blarg.moveUp();
          
         }
     }
