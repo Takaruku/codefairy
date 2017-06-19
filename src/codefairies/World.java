@@ -13,6 +13,9 @@ import java.util.ArrayList;
  */
 public class World {
 
+    private static int numofplayers = 0;
+    private static boolean gamestart = false;
+
     private static ArrayList<school> schoolList = new ArrayList<>();
     private static ArrayList<student> studentList = new ArrayList<>();
     private static ArrayList<teacher> teacherList = new ArrayList<>();
@@ -37,7 +40,6 @@ public class World {
     }
 
 // </editor-fold>
-
     public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
@@ -51,38 +53,54 @@ public class World {
     public static ArrayList<student> getStudentList(int alliegance) {
         ArrayList<student> specificStudentList = new ArrayList<>();
         for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getAlliegance() == alliegance) {
+            if (alliegance == -1) {
                 specificStudentList.add(studentList.get(i));
+            } else {
+                if (studentList.get(i).getAlliegance() == alliegance) {
+                    specificStudentList.add(studentList.get(i));
+                }
             }
         }
         return specificStudentList;
     }
-    
+
     public static ArrayList<teacher> getTeacherList(int alliegance) {
         ArrayList<teacher> specificTeacherList = new ArrayList<>();
         for (int i = 0; i < teacherList.size(); i++) {
-            if (teacherList.get(i).getAlliegance() == alliegance) {
+            if (alliegance == -1) {
                 specificTeacherList.add(teacherList.get(i));
+            } else {
+                if (teacherList.get(i).getAlliegance() == alliegance) {
+                    specificTeacherList.add(teacherList.get(i));
+                }
             }
         }
         return specificTeacherList;
     }
-    
+
     public static ArrayList<fairy> getFairyList(int alliegance) {
         ArrayList<fairy> specificFairyList = new ArrayList<>();
         for (int i = 0; i < fairyList.size(); i++) {
-            if (fairyList.get(i).getAlliegance() == alliegance) {
+            if (alliegance == -1) {
                 specificFairyList.add(fairyList.get(i));
+            } else {
+                if (fairyList.get(i).getAlliegance() == alliegance) {
+                    specificFairyList.add(fairyList.get(i));
+                }
             }
         }
         return specificFairyList;
     }
-    
+
     public static ArrayList<cookie> getCookieList(int alliegance) {
         ArrayList<cookie> specificCookieList = new ArrayList<>();
         for (int i = 0; i < cookieList.size(); i++) {
-            if (cookieList.get(i).getAlliegance() == alliegance) {
+            if (alliegance == -1) {
                 specificCookieList.add(cookieList.get(i));
+            } else {
+                if (cookieList.get(i).getAlliegance() == alliegance) {
+                    specificCookieList.add(cookieList.get(i));
+                }
             }
         }
         return specificCookieList;
@@ -90,29 +108,45 @@ public class World {
 
     private static int worldXDim = 16;
     private static int worldYDim = 16;
-    
-    public static int getXDim(){
+
+    public static void setNumPlayers(int num) {
+        numofplayers = num;
+    }
+
+    public static boolean getgamestart() {
+        return gamestart;
+    }
+
+    public static void setgamestart(boolean start) {
+        gamestart = start;
+    }
+
+    public static int getNumPlayers() {
+        return numofplayers;
+    }
+
+    public static int getXDim() {
         return worldXDim;
     }
-    
-    public static int getYDim(){
+
+    public static int getYDim() {
         return worldYDim;
     }
-    
-    public static variables[][] getWorldSpace(){
+
+    public static variables[][] getWorldSpace() {
         return worldSpace;
     }
-    
+
     private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public static void addToSpace (int x, int y, variables v){
+    public static void addToSpace(int x, int y, variables v) {
         worldSpace[x][y] = v;
     }
-    
-    public static void deleteFromSpace (int x, int y, variables v){
+
+    public static void deleteFromSpace(int x, int y, variables v) {
         worldSpace[x][y] = null;
     }
-    
+
     public static String checkSpace(int x, int y, char dir) {
         variables checkedSpace = null;
         boolean error = false;

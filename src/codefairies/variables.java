@@ -19,12 +19,14 @@ public class variables {
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
     private boolean fighter;
+     boolean didaction;
 
- public  variables(int x, int y, int team) {
-      
-     setxLocation(x);
+    public variables(int x, int y, int team) {
+
+        setxLocation(x);
         setyLocation(y);
         setAlliegance(team);
+        didaction = false;
     }
 
     /**
@@ -68,7 +70,7 @@ public class variables {
     public void setHealth(int health) {
         this.health = health;
         //run this code continually during battles
-        if (health ==0){
+        if (health == 0) {
             setAlive(false);//starts the chain of code that leads to the death of the object
         }
     }
@@ -93,52 +95,78 @@ public class variables {
     public boolean isAlive() {
         return alive;
     }
+
     /**
      * kills objects if there health runs out
      */
-    public void death(){   
-     World.deleteFromSpace(xLocation, yLocation, this); 
-     //removes it if it dies FOREVER
+    public void death() {
+        World.deleteFromSpace(xLocation, yLocation, this);
+        //removes it if it dies FOREVER
     }
+
     /**
      * @param alive the alive to set
      */
     public void setAlive(boolean alive) {
         this.alive = alive;
-        if (alive == false){
-            death();          
+        if (alive == false) {
+            death();
         }//can i put this code in here
     }
 
-    public void moveUp() {
-        if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
-            setyLocation(yLocation + 1);
-            World.addToSpace(xLocation, yLocation, this);
-            World.deleteFromSpace(xLocation, yLocation - 1, this);
-        }
+    public void exhaust() {
+
+        didaction = true;
+    }
+
+    public void refresh() {
+
+        didaction = false;
     }
 
     public void moveDown() {
-        if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
-            setyLocation(yLocation - 1);
-            World.addToSpace(xLocation, yLocation, this);
-            World.deleteFromSpace(xLocation, yLocation + 1, this);
+        if (!didaction) {
+            if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
+                setyLocation(yLocation + 1);
+                World.addToSpace(xLocation, yLocation, this);
+                World.deleteFromSpace(xLocation, yLocation - 1, this);
+            }
+            didaction = true;
+        }
+    }
+
+    public void moveUp() {
+        if (!didaction) {
+            if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
+                setyLocation(yLocation - 1);
+                World.addToSpace(xLocation, yLocation, this);
+                World.deleteFromSpace(xLocation, yLocation + 1, this);
+            }
+            didaction = true;
         }
     }
 
     public void moveRight() {
-        if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
-            setxLocation(xLocation + 1);
-            World.addToSpace(xLocation, yLocation, this);
-            World.deleteFromSpace(xLocation - 1, yLocation, this);
+        if (!didaction) {
+
+            if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
+                setxLocation(xLocation + 1);
+                World.addToSpace(xLocation, yLocation, this);
+                World.deleteFromSpace(xLocation - 1, yLocation, this);
+            }
+            didaction = true;
         }
     }
 
     public void moveLeft() {
-        if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
-            setxLocation(xLocation - 1);
-            World.addToSpace(xLocation, yLocation, this);
-            World.deleteFromSpace(xLocation + 1, yLocation, this);
+        if (!didaction) {
+
+            if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
+                setxLocation(xLocation - 1);
+                World.addToSpace(xLocation, yLocation, this);
+                World.deleteFromSpace(xLocation + 1, yLocation, this);
+            }
+            didaction = true;
         }
     }
 

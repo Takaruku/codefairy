@@ -30,6 +30,8 @@ public class combat {
                 a.setHealth(a.getHealth() + damage);
             }
         }
+        a.exhaust();
+        
     }
 
     public boolean findNeighbour(variables a, variables b) {//each object that moves should run this code every round
