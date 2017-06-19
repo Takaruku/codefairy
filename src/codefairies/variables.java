@@ -225,7 +225,6 @@ public class variables {
                 fairy hold;
                 if (World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
                     hold = new fairy(getxLocation(), getyLocation() - 1, getAlliegance(), "Spawn");
-                    World.addToSpace(getxLocation(), getyLocation() - 1, hold);
                     World.addToList(hold);
                 }
                 count = 0;
