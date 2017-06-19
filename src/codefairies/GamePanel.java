@@ -18,7 +18,7 @@ import javax.swing.Timer;
  * @author 070021183
  */
 public class GamePanel extends javax.swing.JPanel {
-    
+
     JPanel parent;
     Timer animTimer;
     Image space2 = Toolkit.getDefaultToolkit().getImage("src\\space2.jpg");
@@ -27,7 +27,7 @@ public class GamePanel extends javax.swing.JPanel {
     Image fairies = Toolkit.getDefaultToolkit().getImage("src\\fairy.png");
     Image school = Toolkit.getDefaultToolkit().getImage("src\\school.png");
     Image rd = Toolkit.getDefaultToolkit().getImage("src\\rdhead.png");
-    User[] users = new User[4];
+    public User[] users = new User[5];
     int count = 0;
     int imageSize = 60;
 
@@ -39,21 +39,27 @@ public class GamePanel extends javax.swing.JPanel {
         this.setFocusable(true);
         parent = jPanel1;// tells panel that controls this one
         //create and start a Timer for animation
-        animTimer = new Timer(1000, new AnimTimerTick());
+        animTimer = new Timer(500, new AnimTimerTick());
         animTimer.start();
-        
+
         teacher = teacher.getScaledInstance(imageSize, imageSize, 10);
         student = student.getScaledInstance(imageSize, imageSize, 10);
         fairies = fairies.getScaledInstance(imageSize, imageSize, 10);
         school = school.getScaledInstance(imageSize, imageSize, 10);
         rd = rd.getScaledInstance(imageSize, imageSize, 10);
         //check if school draws
-        World.setNumPlayers(1);
-        World.addToList(new student(5, 5, 1));
-        World.addToList(new school(15, 15, 1));
+        World.setNumPlayers(4);
+        for (int i = 1; i < 5; i++) {
+            users[i] = new User(i);
+        }
+        World.setup(users);
         
+        
+        World.addToList(new student(5, 5, 1));
+        World.addToList(new school(5, 6, 1));
+
     }
-    
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(space2, 0, 0, this);
@@ -76,16 +82,21 @@ public class GamePanel extends javax.swing.JPanel {
             }
         }
     }
-    
+
     public void turn() {
         if (count == World.getNumPlayers()) {
             count = 1;
             for (variables var : World.getStudentList(-1)) {
                 var.refresh();
+                System.out.println("Student found");
             }
             for (variables var : World.getTeacherList(-1)) {
                 var.refresh();
             }
+            for (variables var : World.getSchoolList(-1)) {
+                var.schooltimerspawn();
+            }
+
             for (variables var : World.getFairyList(-1)) {
                 var.refresh();
             }
@@ -95,19 +106,24 @@ public class GamePanel extends javax.swing.JPanel {
         } else {
             count++;
         }
-        System.out.println("Hi");
+        System.out.println(count);
         users[count].ai();
-        
+
+        // add exit condition when only one user remains
     }
-    
+
     private class AnimTimerTick implements ActionListener {
-        
+
         public void actionPerformed(ActionEvent ae) {
             if (World.getgamestart()) {
                 turn();
             }
             repaint();
         }
+    }
+
+    public User[] getUsers() {
+        return users;
     }
 
     /**

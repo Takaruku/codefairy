@@ -11,7 +11,7 @@ package codefairies;
  */
 public class combat {
 
-    public void dealDamage(variables a, variables b) {
+    public  void dealDamage(variables a, variables b) {
         boolean beside = findNeighbour(a, b);
         boolean sameTeam = false;
         if (a.getAlliegance() == b.getAlliegance()) {

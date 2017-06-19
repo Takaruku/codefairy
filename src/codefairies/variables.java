@@ -13,13 +13,14 @@ import java.awt.Image;
  */
 public class variables {
 
+    private int count;
     private int xLocation;
     private int yLocation;
     private int health;
     private int alliegance; //each team gets assigned their own number
     private boolean alive;
     private boolean fighter;
-     boolean didaction;
+    boolean didaction;
 
     public variables(int x, int y, int team) {
 
@@ -27,6 +28,7 @@ public class variables {
         setyLocation(y);
         setAlliegance(team);
         didaction = false;
+        count = 0;
     }
 
     /**
@@ -124,50 +126,67 @@ public class variables {
         didaction = false;
     }
 
-    public void moveDown() {
-        if (!didaction) {
-            if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
-                setyLocation(yLocation + 1);
-                World.addToSpace(xLocation, yLocation, this);
-                World.deleteFromSpace(xLocation, yLocation - 1, this);
-            }
-            didaction = true;
-        }
-    }
-
     public void moveUp() {
         if (!didaction) {
-            if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
+            if (World.checkSpace(xLocation, yLocation, 'u').equals("nothing")) {
                 setyLocation(yLocation - 1);
-                World.addToSpace(xLocation, yLocation, this);
-                World.deleteFromSpace(xLocation, yLocation + 1, this);
+                if (World.addToSpace(xLocation, yLocation, this)) {
+                    World.deleteFromSpace(xLocation, yLocation + 1, this);
+                }
             }
             didaction = true;
         }
     }
 
-    public void moveRight() {
-        if (!didaction) {
-
-            if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
-                setxLocation(xLocation + 1);
-                World.addToSpace(xLocation, yLocation, this);
-                World.deleteFromSpace(xLocation - 1, yLocation, this);
+    public void moveDown() {
+        try {
+            if (!didaction) {
+                if (World.checkSpace(xLocation, yLocation, 'd').equals("nothing")) {
+                    setyLocation(yLocation + 1);
+                    if (World.addToSpace(xLocation, yLocation, this)) {
+                        World.deleteFromSpace(xLocation, yLocation -1, this);
+                    }
+                }
+                didaction = true;
             }
-            didaction = true;
+        } catch (Exception e) {
         }
+
     }
 
     public void moveLeft() {
-        if (!didaction) {
+        try {
+            if (!didaction) {
 
-            if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
-                setxLocation(xLocation - 1);
-                World.addToSpace(xLocation, yLocation, this);
-                World.deleteFromSpace(xLocation + 1, yLocation, this);
+                if (World.checkSpace(xLocation, yLocation, 'r').equals("nothing")) {
+                    setxLocation(xLocation + 1);
+                    if (World.addToSpace(xLocation, yLocation, this)) {
+                        World.deleteFromSpace(xLocation - 1, yLocation, this);
+                    }
+                }
+                didaction = true;
             }
-            didaction = true;
+        } catch (Exception e) {
         }
+
+    }
+
+    public void moveRight() {
+        try {
+            if (!didaction) {
+
+                if (World.checkSpace(xLocation, yLocation, 'l').equals("nothing")) {
+                    setxLocation(xLocation - 1);
+
+                    if (World.addToSpace(xLocation, yLocation, this)) {
+                        World.deleteFromSpace(xLocation + 1, yLocation, this);
+                    }
+                }
+                didaction = true;
+            }
+        } catch (Exception e) {
+        }
+
     }
 
     /**
@@ -184,4 +203,87 @@ public class variables {
         this.fighter = canFight;
     }
 
+    public void schooltimerspawn() {
+        if (this instanceof school) {
+            count++;
+            System.out.println(count);
+            if (count == 10) {
+                fairy hold;
+                if (World.checkSpace(getxLocation(), getyLocation() + 1, 'd').equals("nothing")) {
+                    hold = new fairy(getxLocation(), getyLocation() + 1, getAlliegance(), "Spawn");
+                    World.addToSpace(getxLocation(), getyLocation() + 1, hold);
+                    World.addToList(hold);
+                }
+                count = 0;
+            }
+
+        }
+    }
+
+    public boolean hasNeighbour() {
+        boolean hold = false;
+        if (!World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
+            hold = true;
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'd').equals("nothing")) {
+            hold = true;
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'l').equals("nothing")) {
+            hold = true;
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'r').equals("nothing")) {
+            hold = true;
+        }
+
+        return hold;
+    }
+
+    public char whereNeighbour() {
+        char hold = ' ';
+        if (!World.checkSpace(getxLocation(), getyLocation(), 'u').equals("nothing")) {
+            hold = 'u';
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'd').equals("nothing")) {
+            hold = 'd';
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'l').equals("nothing")) {
+            hold = 'l';
+        } else if (!World.checkSpace(getxLocation(), getyLocation(), 'r').equals("nothing")) {
+            hold = 'r';
+        }
+        return hold;
+    }
+
+    public void dealDamage(variables a, variables b) {
+        if (fighter) {
+
+            boolean beside = findNeighbour(a, b);
+            boolean sameTeam = false;
+            if (a.getAlliegance() == b.getAlliegance()) {
+                sameTeam = true;
+            }
+            if (beside && sameTeam == false) {
+                int damage = -1;
+                if (a.isFighter() == true) {
+                    if (b.isFighter() == true) {
+                        a.setHealth(a.getHealth() + damage);
+                        b.setHealth(b.getHealth() + damage);
+                    } else {
+                        b.setHealth(b.getHealth() + damage);
+                    }
+                } else if (b.isFighter() == true) {
+                    a.setHealth(a.getHealth() + damage);
+                }
+            }
+            a.exhaust();
+        }
+
+    }
+
+    public boolean findNeighbour(variables a, variables b) {//each object that moves should run this code every round
+        //if it is a fighter, then it can run the above code
+        if (a.getxLocation() == b.getxLocation() - 1 || a.getxLocation() == b.getxLocation() + 1) {
+            return true;
+        } else if (a.getyLocation() == b.getyLocation() - 1 || a.getyLocation() == b.getyLocation() + 1) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 }

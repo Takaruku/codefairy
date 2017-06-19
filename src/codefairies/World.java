@@ -15,6 +15,7 @@ public class World {
 
     private static int numofplayers = 0;
     private static boolean gamestart = false;
+    public static User[] users;
 
     private static ArrayList<school> schoolList = new ArrayList<>();
     private static ArrayList<student> studentList = new ArrayList<>();
@@ -26,25 +27,38 @@ public class World {
     public static void addToList(variables e) {
         if (e instanceof school) {
             schoolList.add((school) e);
+
         } else if (e instanceof student) {
             studentList.add((student) e);
+            users[1].addstudent((student) e);
         } else if (e instanceof teacher) {
             teacherList.add((teacher) e);
+
         } else if (e instanceof fairy) {
             fairyList.add((fairy) e);
+            users[1].addfairy((fairy) e);
         } else if (e instanceof cookie) {
             cookieList.add((cookie) e);
+            users[1].addcookie((cookie) e);
         }
         addToSpace(e.getxLocation(), e.getyLocation(), e);
         System.out.println(e.getxLocation() + " " + e.getyLocation());
+    }
+
+    public static void setup(User[] userhold) {
+        users = userhold;
     }
 
 // </editor-fold>
     public static ArrayList<school> getSchoolList(int alliegance) {
         ArrayList<school> specificSchoolList = new ArrayList<>();
         for (int i = 0; i < schoolList.size(); i++) {
-            if (schoolList.get(i).getAlliegance() == alliegance) {
+            if (alliegance == -1) {
                 specificSchoolList.add(schoolList.get(i));
+            } else {
+                if (schoolList.get(i).getAlliegance() == alliegance) {
+                    specificSchoolList.add(schoolList.get(i));
+                }
             }
         }
         return specificSchoolList;
@@ -139,8 +153,14 @@ public class World {
 
     private static variables[][] worldSpace = new variables[worldXDim][worldYDim];
 
-    public static void addToSpace(int x, int y, variables v) {
-        worldSpace[x][y] = v;
+    public static boolean addToSpace(int x, int y, variables v) {
+        try {
+            worldSpace[x][y] = v;
+            return true;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return false;
+        }
+
     }
 
     public static void deleteFromSpace(int x, int y, variables v) {
