@@ -208,6 +208,24 @@ public class World {
         }
     }
 
+    public boolean checkDomination() {
+        int temp = 0;
+        for (int i = 0; i < worldSpace.length; i++) {
+            for (int j = 0; j < worldSpace[i].length; j++) {
+                try {
+                    int all = worldSpace[i][j].getAlliegance();
+                    if (temp == 0) {
+                        temp = all;
+                    } else if (temp != 0 && all != temp) {
+                        return false;
+                    }
+                } catch (Exception e) {
+                }
+            }
+        }
+        return true;
+    }
+
     public void printSpace() { // Vincenzo wrote this method
         for (int i = 0; i < worldSpace.length; i++) {
 
@@ -217,7 +235,7 @@ public class World {
                 if (worldSpace[i][j] instanceof student) {
                     System.out.print("Stud");
                 } else if (worldSpace[i][j] instanceof school) {
-                    System.out.print("Shco");
+                    System.out.print("Scho");
                 } else if (worldSpace[i][j] instanceof fairy) {
                     System.out.print("Fair");
                 } else if (worldSpace[i][j] instanceof teacher) {
