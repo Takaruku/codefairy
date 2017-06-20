@@ -11,25 +11,21 @@ import java.util.ArrayList;
  *
  * @author Lenovo
  */
-public class User { // Vincenzo wrote this method, it's moderately buggy?
+public class User { // Vincenzo wrote this class, it's moderately buggy?
 
-    // <editor-fold defaultstate="collapsed" desc="Does this work?">
     String name;
     int idnum;
-    // </editor-fold>
 
     public User(int idnum) {
 
         this.idnum = idnum;
     }
 
-    // <editor-fold defaultstate="collapsed" desc="ArrayList Variables">
     ArrayList<student> students = new ArrayList();
     ArrayList<teacher> teachers = new ArrayList();
     ArrayList<fairy> fairies = new ArrayList();
     ArrayList<cookie> cookies = new ArrayList();
-    // </editor-fold>
-
+    
     public User() {
 
     }
