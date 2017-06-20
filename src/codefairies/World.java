@@ -16,7 +16,7 @@ public class World {
     private static int numofplayers = 0;// Vincenzo wrote this line
     private static boolean gamestart = false;// Vincenzo wrote this line
     private static boolean gamend = false;
-    public static User[] users; //The list of users plating in the world, Vincenzo wrote this line
+    public static User[] users; //The list of users playing in the world, Vincenzo wrote this line
 
     //Lists of entities in the world
     private static ArrayList<school> schoolList = new ArrayList<>();
